@@ -22,7 +22,7 @@
 
 if (!defined('DC_CONTEXT_ADMIN')) { return; }
 
-$_menu['Plugins']->addItem(__('YASH'),'plugin.php?p=yash','index.php?pf=yash/icon.png',
+$_menu['Blog']->addItem(__('YASH'),'plugin.php?p=yash','index.php?pf=yash/icon.png',
 		preg_match('/plugin.php\?p=yash(&.*)?$/',$_SERVER['REQUEST_URI']),
 		$core->auth->check('contentadmin',$core->blog->id));
 
