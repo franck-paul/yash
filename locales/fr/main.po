@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dotclear 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-20 13:59+0200\n"
+"POT-Creation-Date: 2013-09-24 13:21+0200\n"
 "PO-Revision-Date: 2008-05-30 04:19+0100\n"
 "Last-Translator: Pep <>\n"
 "Language-Team: French\n"
@@ -19,6 +19,9 @@ msgstr ""
 
 msgid "YASH"
 msgstr "YASH"
+
+msgid "Yet Another Syntax Highlighter"
+msgstr "Coloration syntaxique de code"
 
 msgid "Highlighted Code"
 msgstr "Code mis en forme"
