@@ -60,4 +60,3 @@ class yashBehaviors
 		return '<pre class="brush: '.$class.'">'.htmlspecialchars($text).'</pre>';
 	}
 }
-?>
