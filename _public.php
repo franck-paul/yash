@@ -31,6 +31,7 @@ class dcYASH
 	{
 		global $core;
 
+		$core->blog->settings->addNamespace('yash');
 		if ($core->blog->settings->yash->yash_active)
 		{
 			$custom_css = $core->blog->settings->yash->yash_custom_css;
@@ -59,6 +60,7 @@ class dcYASH
 	{
 		global $core;
 
+		$core->blog->settings->addNamespace('yash');
 		if ($core->blog->settings->yash->yash_active)
 		{
 			echo

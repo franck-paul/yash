@@ -23,7 +23,7 @@
 if (!defined('DC_CONTEXT_ADMIN')) { exit; }
 
 // Setting default parameters if missing configuration
-$core->blog->settings->addNamespace('wordcount');
+$core->blog->settings->addNamespace('yash');
 if (is_null($core->blog->settings->yash->yash_active)) {
 	try {
 		// Default state is active if the comments are configured to allow wiki syntax
