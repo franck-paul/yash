@@ -30,7 +30,7 @@ if (is_null($core->blog->settings->yash->yash_active)) {
 		$core->blog->settings->yash->put('yash_active',false,'boolean',true);
 		$core->blog->settings->yash->put('yash_custom_css','','string',true);
 		$core->blog->triggerBlog();
-		http::redirect(http::getSelfURI());
+		http::redirect($p_url);
 	}
 	catch (Exception $e) {
 		$core->error->add($e->getMessage());
@@ -87,7 +87,8 @@ if (!empty($_POST['saveconfig'])) {
 		$core->blog->settings->yash->put('yash_active',$active,'boolean');
 		$core->blog->settings->yash->put('yash_custom_css',$custom_css,'string');
 		$core->blog->triggerBlog();
-		$msg = __('Configuration successfully updated.');
+		dcPage::addSuccessNotice(__('Configuration successfully updated.'));
+		http::redirect($p_url);
 	}
 	catch (Exception $e)
 	{
@@ -107,9 +108,8 @@ if (!empty($_POST['saveconfig'])) {
 			html::escapeHTML($core->blog->name) => '',
 			__('YASH') => ''
 		));
+echo dcPage::notices();
 ?>
-
-<?php if (!empty($msg)) dcPage::success($msg); ?>
 
 <div id="yash_options">
 	<form method="post" action="<?php http::getSelfURI(); ?>">
