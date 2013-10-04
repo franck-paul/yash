@@ -23,9 +23,12 @@
 if (!defined('DC_RC_PATH')) { return; }
 
 $this->registerModule(
-	/* Name */		"YASH",
+	/* Name */			"YASH",
 	/* Description*/	"Yet Another Syntax Highlighter",
 	/* Author */		"Pep and contributors",
 	/* Version */		'1.2',
-	/* Permissions */	'contentadmin'
+	array(
+		/* Permissions */	'permissions' =>	'contentadmin',
+		/* Type */			'type' =>			'plugin'
+	)
 );
