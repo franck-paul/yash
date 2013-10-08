@@ -62,7 +62,7 @@ if (!empty($_REQUEST['popup'])) {
 		'<html>'.
 		'<head>'.
 	  	'<title>'.__('YASH - Syntax Selector').'</title>'.
-	  	'<script type="text/javascript" src="index.php?pf=yash/popup.js"></script>'.
+	  	'<script type="text/javascript" src="index.php?pf=yash/js/popup.js"></script>'.
 		'</head>'.
 		'<body>'.
 		'<h2>'.__('YASH - Syntax Selector').'</h2>'.

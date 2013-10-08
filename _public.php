@@ -47,11 +47,11 @@ class dcYASH
 				}
 			}
 			else {
-				$css = html::stripHostURL($core->blog->getQmarkURL().'pf=yash/yash-theme.css');
+				$css = html::stripHostURL($core->blog->getQmarkURL().'pf=yash/yash/yash-theme.css');
 			}
 			echo
 				'<style type="text/css" media="screen">@import url('
-				.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/yash.css').');</style>'."\n".
+				.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/yash/yash.css').');</style>'."\n".
 				'<style type="text/css" media="screen">@import url('.$css.');</style>'."\n";
 		}
 	}
@@ -65,13 +65,13 @@ class dcYASH
 		{
 			echo
 				'<script type="text/javascript" src="'.
-				html::stripHostURL($core->blog->getQmarkURL().'pf=yash/yash.js').
+				html::stripHostURL($core->blog->getQmarkURL().'pf=yash/yash/yash.js').
 				'"></script>'."\n".
 				'<script type="text/javascript">'."\n".
 				"//<![CDATA[\n".
 				"\$(function() {\n".
 				"	dp.sh.ClipboardSwf = '".
-				html::stripHostURL($core->blog->getQmarkURL().'pf=yash/yash.swf')."';\n".
+				html::stripHostURL($core->blog->getQmarkURL().'pf=yash/yash/yash.swf')."';\n".
 				"	dp.sh.highlight();\n".
 				"});\n".
 				"\n//]]>\n".

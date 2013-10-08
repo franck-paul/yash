@@ -39,7 +39,7 @@ class yashBehaviors
 	public static function postHeaders()
 	{
 		return
-		'<script type="text/javascript" src="index.php?pf=yash/post.js"></script>'.
+		'<script type="text/javascript" src="index.php?pf=yash/js/post.js"></script>'.
 		'<script type="text/javascript">'."\n".
 		"//<![CDATA[\n".
 		dcPage::jsVar('jsToolBar.prototype.elements.yash.title',__('Highlighted Code')).
