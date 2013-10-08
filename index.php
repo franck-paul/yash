@@ -28,6 +28,7 @@ if (is_null($core->blog->settings->yash->yash_active)) {
 	try {
 		// Default state is active if the comments are configured to allow wiki syntax
 		$core->blog->settings->yash->put('yash_active',false,'boolean',true);
+		$core->blog->settings->yash->put('yash_theme','Default','string',true);
 		$core->blog->settings->yash->put('yash_custom_css','','string',true);
 		$core->blog->triggerBlog();
 		http::redirect($p_url);
@@ -39,23 +40,36 @@ if (is_null($core->blog->settings->yash->yash_active)) {
 
 // Getting current parameters
 $active = (boolean)$core->blog->settings->yash->yash_active;
+$theme = (string)$core->blog->settings->yash->yash_theme;
 $custom_css = (string)$core->blog->settings->yash->yash_custom_css;
 
 if (!empty($_REQUEST['popup'])) {
 	$yash_brushes = array(
-		'plain' 	=> __('Plain Text'),
-		'xml' 	=> __('XML/XSLT/XHTML/HTML'),
-		'css' 	=> __('CSS'),
-		'js' 	=> __('Javascript'),
-		'php' 	=> __('PHP'),
-		'sql' 	=> __('SQL'),
-		'python'	=> __('Python'),
-		'ruby'	=> __('Ruby'),
-		'java'	=> __('Java'),
-		'cpp'	=> __('C++'),
-		'csharp'	=> __('C#'),
-		'delphi'	=> __('Delphi'),
-		'vb'		=> __('Visual Basic')
+		'plain' 		=> __('Plain Text'),
+		'applescrip'	=> __('AppleScript'),
+		'as3'			=> __('ActionScript3'),
+		'bash'			=> __('Bash/shell'),
+		'cf'			=> __('ColdFusion'),
+		'csharp'		=> __('C#'),
+		'cpp'			=> __('C/C++'),
+		'css'			=> __('CSS'),
+		'delphi'		=> __('Delphi'),
+		'diff'			=> __('Diff/Patch'),
+		'erl'			=> __('Erlang'),
+		'groovy'		=> __('Groovy'),
+		'js'			=> __('Javascript/JSON'),
+		'java'			=> __('Java'),
+		'jfx'			=> __('JavaFX'),
+		'pl'			=> __('Perl'),
+		'php'			=> __('PHP'),
+		'ps'			=> __('PowerShell'),
+		'python'		=> __('Python'),
+		'ruby'			=> __('Ruby'),
+		'sass'			=> __('SASS'),
+		'scala'			=> __('Scala'),
+		'sql'			=> __('SQL'),
+		'vb'			=> __('Visual Basic'),
+		'xml' 			=> __('XML/XSLT/XHTML/HTML')
 	);
 
 	echo
@@ -82,9 +96,11 @@ if (!empty($_POST['saveconfig'])) {
 	try
 	{
 		$core->blog->settings->addNameSpace('yash');
-		$active = (empty($_POST['active']))?false:true;
-		$custom_css = (empty($_POST['custom_css']))?'':html::sanitizeURL($_POST['custom_css']);
+		$active = (empty($_POST['active'])) ? false : true;
+		$theme = (empty($_POST['theme'])) ? 'Default' : $_POST['theme'];
+		$custom_css = (empty($_POST['custom_css'])) ? '' : html::sanitizeURL($_POST['custom_css']);
 		$core->blog->settings->yash->put('yash_active',$active,'boolean');
+		$core->blog->settings->yash->put('yash_theme',$theme,'string');
 		$core->blog->settings->yash->put('yash_custom_css',$custom_css,'string');
 		$core->blog->triggerBlog();
 		dcPage::addSuccessNotice(__('Configuration successfully updated.'));
@@ -109,6 +125,17 @@ if (!empty($_POST['saveconfig'])) {
 			__('YASH') => ''
 		));
 echo dcPage::notices();
+
+$combo_theme = array(
+	__('Default') => 'Default',
+	__('Django') => 'Django',
+	__('Eclipse') => 'Eclipse',
+	__('Emacs') => 'Emacs',
+	__('Fade to gray') => 'FadeToGrey',
+	__('Midnight') => 'Midnight',
+	__('Monokai') => 'Monokai',
+	__('RDark') => 'RDark'
+	);
 ?>
 
 <div id="yash_options">
@@ -119,6 +146,9 @@ echo dcPage::notices();
 	</p>
 
 	<h3><?php echo __('Options'); ?></h3>
+	<p><label for="theme" class="classic"><?php echo __('Theme:'); ?></label>&nbsp;
+		<?php echo form::combo('theme',$combo_theme,$theme); ?>
+	</p>
 	<p class="field">
 		<label class="classic"><?php echo __('Use custom CSS') ; ?> : </label>
 		<?php echo form::field('custom_css',40,128,$custom_css); ?>

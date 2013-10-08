@@ -47,12 +47,17 @@ class dcYASH
 				}
 			}
 			else {
-				$css = html::stripHostURL($core->blog->getQmarkURL().'pf=yash/yash/yash-theme.css');
+				$theme = (string)$core->blog->settings->yash->yash_theme;
+				if ($theme == '') {
+					$css = html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/css/shThemeDefault.css');
+				} else {
+					$css = html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/css/shTheme'.$theme.'.css');
+				}
 			}
 			echo
-				'<style type="text/css" media="screen">@import url('
-				.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/yash/yash.css').');</style>'."\n".
-				'<style type="text/css" media="screen">@import url('.$css.');</style>'."\n";
+				'<link rel="stylesheet" href="'
+				.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/css/shCore.css').'" type="text/css" media="screen" />'."\n".
+				'<link rel="stylesheet" href="'.$css.'" type="text/css" media="screen" />'."\n";
 		}
 	}
 
@@ -64,16 +69,35 @@ class dcYASH
 		if ($core->blog->settings->yash->yash_active)
 		{
 			echo
-				'<script type="text/javascript" src="'.
-				html::stripHostURL($core->blog->getQmarkURL().'pf=yash/yash/yash.js').
-				'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shCore.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushAppleCript.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushAS3.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushBash.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushColdFusion.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushCpp.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushCSharp.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushCss.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushDelphi.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushDiff.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushErlang.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushGroovy.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushJava.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushJavaFX.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushJScript.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushPerl.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushPhp.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushPlain.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushPowerShell.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushPython.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushRuby.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushSass.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushScala.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushSql.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushVb.js').'"></script>'."\n".
+				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shBrushXml.js').'"></script>'."\n".
 				'<script type="text/javascript">'."\n".
 				"//<![CDATA[\n".
-				"\$(function() {\n".
-				"	dp.sh.ClipboardSwf = '".
-				html::stripHostURL($core->blog->getQmarkURL().'pf=yash/yash/yash.swf')."';\n".
-				"	dp.sh.highlight();\n".
-				"});\n".
+				'SyntaxHighlighter.all();'.
 				"\n//]]>\n".
 				"</script>\n";
 		}

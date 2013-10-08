@@ -1,5 +1,0 @@
-YASH est un plugin d'intégration de la librairie Javascript Syntax Highliter créée par Alex Gorbatchev.
-Pour plus d'information sur Syntax Highlighter, consultez http://syntaxhighlighter.googlecode.com/
-Cette librairie est disponible sous licence GNU GPL.
-
-Un grand merci à Alex pour son travail, repris ici dans sa version 1.6, tirée du SVN au 29/05/2008.

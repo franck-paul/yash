@@ -3,13 +3,13 @@ $(function() {
 		window.close();
 		return false;
 	});
-	
+
 	$('#yash-ok').click(function() {
 		sendClose();
 		window.close();
 		return false;
 	});
-	
+
 	function sendClose() {
 		var insert_form = $('#yash-form').get(0);
 		if (insert_form == undefined) { return; }

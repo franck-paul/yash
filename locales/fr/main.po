@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dotclear 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-24 13:21+0200\n"
+"POT-Creation-Date: 2013-10-08 11:09+0200\n"
 "PO-Revision-Date: 2008-05-30 04:19+0100\n"
 "Last-Translator: Pep <>\n"
 "Language-Team: French\n"
@@ -27,43 +27,79 @@ msgid "Highlighted Code"
 msgstr "Code mis en forme"
 
 msgid "Plain Text"
-msgstr "Simple texte"
+msgstr "Texte simple"
 
-msgid "XML/XSLT/XHTML/HTML"
-msgstr "XML/XSLT/XHTML/HTML"
+msgid "AppleScript"
+msgstr ""
 
-msgid "CSS"
-msgstr "CSS"
+msgid "ActionScript3"
+msgstr ""
 
-msgid "Javascript"
-msgstr "Javascript"
+msgid "Bash/shell"
+msgstr ""
 
-msgid "PHP"
-msgstr "PHP"
-
-msgid "SQL"
-msgstr "SQL"
-
-msgid "Python"
-msgstr "Python"
-
-msgid "Ruby"
-msgstr "Ruby"
-
-msgid "Java"
-msgstr "Java"
-
-msgid "C++"
-msgstr "C++"
+msgid "ColdFusion"
+msgstr ""
 
 msgid "C#"
-msgstr "C#"
+msgstr ""
+
+msgid "C/C++"
+msgstr ""
+
+msgid "CSS"
+msgstr ""
 
 msgid "Delphi"
-msgstr "Delphi"
+msgstr ""
+
+msgid "Diff/Patch"
+msgstr ""
+
+msgid "Erlang"
+msgstr ""
+
+msgid "Groovy"
+msgstr ""
+
+msgid "Javascript/JSON"
+msgstr ""
+
+msgid "Java"
+msgstr ""
+
+msgid "JavaFX"
+msgstr ""
+
+msgid "Perl"
+msgstr ""
+
+msgid "PHP"
+msgstr ""
+
+msgid "PowerShell"
+msgstr ""
+
+msgid "Python"
+msgstr ""
+
+msgid "Ruby"
+msgstr ""
+
+msgid "SASS"
+msgstr ""
+
+msgid "Scala"
+msgstr ""
+
+msgid "SQL"
+msgstr ""
 
 msgid "Visual Basic"
-msgstr "Visual Basic"
+msgstr ""
+
+msgid "XML/XSLT/XHTML/HTML"
+msgstr ""
 
 msgid "YASH - Syntax Selector"
 msgstr "YASH - Sélecteur de syntaxe"
@@ -74,8 +110,32 @@ msgstr "Sélectionnez la syntaxe principale de votre extrait de code."
 msgid "Configuration successfully updated."
 msgstr "Configuration mise à jour avec succès."
 
+msgid "Django"
+msgstr ""
+
+msgid "Eclipse"
+msgstr ""
+
+msgid "Emacs"
+msgstr ""
+
+msgid "Fade to gray"
+msgstr ""
+
+msgid "Midnight"
+msgstr ""
+
+msgid "Monokai"
+msgstr ""
+
+msgid "RDark"
+msgstr ""
+
 msgid "Enable YASH"
 msgstr "Activer YASH"
+
+msgid "Theme:"
+msgstr "Thème :"
 
 msgid "Use custom CSS"
 msgstr "CSS personnalisée"
