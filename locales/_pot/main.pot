@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dotclear 2 yash module\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-08 11:09+0200\n"
+"POT-Creation-Date: 2013-10-08 11:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -178,7 +178,7 @@ msgid "Theme:"
 msgstr ""
 
 #: ../hg-plugins/yash//index.php:153
-msgid "Use custom CSS"
+msgid "Use custom CSS:"
 msgstr ""
 
 #: ../hg-plugins/yash//index.php:156

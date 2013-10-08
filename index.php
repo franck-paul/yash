@@ -140,27 +140,28 @@ $combo_theme = array(
 
 <div id="yash_options">
 	<form method="post" action="<?php http::getSelfURI(); ?>">
-	<p class="field">
-		<?php echo form::checkbox('active', 1, $active); ?>
-		<label class="classic" for="active">&nbsp;<?php echo __('Enable YASH');?></label>
-	</p>
+		<p>
+			<?php echo form::checkbox('active', 1, $active); ?>
+			<label class="classic" for="active">&nbsp;<?php echo __('Enable YASH');?></label>
+		</p>
 
-	<h3><?php echo __('Options'); ?></h3>
-	<p><label for="theme" class="classic"><?php echo __('Theme:'); ?></label>&nbsp;
-		<?php echo form::combo('theme',$combo_theme,$theme); ?>
-	</p>
-	<p class="field">
-		<label class="classic"><?php echo __('Use custom CSS') ; ?> : </label>
-		<?php echo form::field('custom_css',40,128,$custom_css); ?>
-	</p>
-	<p class="info"><?php echo __('You can use a custom CSS by providing its location.'); ?><br />
-	<?php echo __('A location beginning with a / is treated as absolute, else it is treated as relative to the blog\'s current theme URL'); ?>
-	</p>
+		<h3><?php echo __('Options'); ?></h3>
+		<p class="field"><label for="theme" class="classic"><?php echo __('Theme:'); ?> </label>
+			<?php echo form::combo('theme',$combo_theme,$theme); ?>
+		</p>
+		<p class="field">
+			<label for="custom_css" class="classic"><?php echo __('Use custom CSS:') ; ?> </label>
+			<?php echo form::field('custom_css',40,128,$custom_css); ?>
+		</p>
+		<p class="info">
+			<?php echo __('You can use a custom CSS by providing its location.'); ?><br />
+			<?php echo __('A location beginning with a / is treated as absolute, else it is treated as relative to the blog\'s current theme URL'); ?>
+		</p>
 
-	<p><input type="hidden" name="p" value="yash" />
-	<?php echo $core->formNonce(); ?>
-	<input type="submit" name="saveconfig" value="<?php echo __('Save configuration'); ?>" />
-	</p>
+		<p><input type="hidden" name="p" value="yash" />
+			<?php echo $core->formNonce(); ?>
+			<input type="submit" name="saveconfig" value="<?php echo __('Save configuration'); ?>" />
+		</p>
 	</form>
 </div>
 
