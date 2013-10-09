@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dotclear 2 yash module\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-08 11:14+0200\n"
+"POT-Creation-Date: 2013-10-09 09:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -181,14 +181,14 @@ msgstr ""
 msgid "Use custom CSS:"
 msgstr ""
 
-#: ../hg-plugins/yash//index.php:156
+#: ../hg-plugins/yash//index.php:157
 msgid "You can use a custom CSS by providing its location."
 msgstr ""
 
-#: ../hg-plugins/yash//index.php:157
+#: ../hg-plugins/yash//index.php:158
 msgid "A location beginning with a / is treated as absolute, else it is treated as relative to the blog's current theme URL"
 msgstr ""
 
-#: ../hg-plugins/yash//index.php:162
+#: ../hg-plugins/yash//index.php:163
 msgid "Save configuration"
 msgstr ""
