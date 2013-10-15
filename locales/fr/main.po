@@ -137,7 +137,6 @@ msgstr "Activer YASH"
 msgid "Theme:"
 msgstr "Thème :"
 
-#, fuzzy
 msgid "Use custom CSS:"
 msgstr "CSS personnalisée :"
 
