@@ -108,7 +108,7 @@ msgid "Select the primary syntax of your code snippet."
 msgstr "Sélectionnez la syntaxe principale de votre extrait de code."
 
 msgid "Configuration successfully updated."
-msgstr "Configuration mise à jour avec succès."
+msgstr "La configuration a été mise à jour."
 
 msgid "Django"
 msgstr ""
