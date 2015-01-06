@@ -46,7 +46,7 @@ $custom_css = (string)$core->blog->settings->yash->yash_custom_css;
 if (!empty($_REQUEST['popup'])) {
 	$yash_brushes = array(
 		'plain' 		=> __('Plain Text'),
-		'applescrip'	=> __('AppleScript'),
+		'applescript'	=> __('AppleScript'),
 		'as3'			=> __('ActionScript3'),
 		'bash'			=> __('Bash/shell'),
 		'cf'			=> __('ColdFusion'),

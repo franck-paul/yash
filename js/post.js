@@ -21,7 +21,7 @@ jsToolBar.prototype.elements.yash = {
 		this.elements.yash.data = {};
 
 		var p_win = window.open(this.elements.yash.open_url,'dc_popup',
-		'alwaysRaised=yes,dependent=yes,toolbar=yes,height=200,width=400,'+
+		'alwaysRaised=yes,dependent=yes,toolbar=yes,height=240,width=480,'+
 		'menubar=no,resizable=yes,scrollbars=yes,status=no');
 	}
 };

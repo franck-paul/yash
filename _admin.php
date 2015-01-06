@@ -29,15 +29,15 @@ $_menu['Blog']->addItem(__('YASH'),'plugin.php?p=yash','index.php?pf=yash/icon.p
 		preg_match('/plugin.php\?p=yash(&.*)?$/',$_SERVER['REQUEST_URI']),
 		$core->auth->check('contentadmin',$core->blog->id));
 
-$core->addBehavior('adminPostHeaders',		array('yashBehaviors','postHeaders'));
-$core->addBehavior('adminPageHeaders',		array('yashBehaviors','postHeaders'));
-$core->addBehavior('adminRelatedHeaders',	array('yashBehaviors','postHeaders'));
 $core->addBehavior('coreInitWikiPost',		array('yashBehaviors','coreInitWikiPost'));
+$core->addBehavior('adminPostEditor',		array('yashBehaviors','adminPostEditor'));
 
 class yashBehaviors
 {
-	public static function postHeaders()
+	public static function adminPostEditor($editor='',$context='',array $tags=array())
 	{
+		if ($editor != 'dcLegacyEditor') return;
+
 		return
 		'<script type="text/javascript" src="index.php?pf=yash/js/post.js"></script>'.
 		'<script type="text/javascript">'."\n".
