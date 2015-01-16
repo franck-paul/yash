@@ -29,34 +29,4 @@ $_menu['Blog']->addItem(__('YASH'),'plugin.php?p=yash','index.php?pf=yash/icon.p
 		preg_match('/plugin.php\?p=yash(&.*)?$/',$_SERVER['REQUEST_URI']),
 		$core->auth->check('contentadmin',$core->blog->id));
 
-$core->addBehavior('coreInitWikiPost',		array('yashBehaviors','coreInitWikiPost'));
-$core->addBehavior('adminPostEditor',		array('yashBehaviors','adminPostEditor'));
-
-class yashBehaviors
-{
-	public static function adminPostEditor($editor='',$context='',array $tags=array())
-	{
-		if ($editor != 'dcLegacyEditor') return;
-
-		return
-		'<script type="text/javascript" src="index.php?pf=yash/js/post.js"></script>'.
-		'<script type="text/javascript">'."\n".
-		"//<![CDATA[\n".
-		dcPage::jsVar('jsToolBar.prototype.elements.yash.title',__('Highlighted Code')).
-		"\n//]]>\n".
-		"</script>\n";
-	}
-
-	public static function coreInitWikiPost($wiki2xhtml)
-	{
-		$wiki2xhtml->registerFunction('macro:yash',array('yashBehaviors','transform'));
-	}
-
-	public static function transform($text,$args)
-	{
-		$text = trim($text);
-		$real_args = explode(' ',$args);
-		$class = empty($real_args[1])?'plain':$real_args[1];
-		return '<pre class="brush: '.$class.'">'.htmlspecialchars($text).'</pre>';
-	}
-}
+$core->addBehavior('adminPostEditor',array('yashBehaviors','adminPostEditor'));

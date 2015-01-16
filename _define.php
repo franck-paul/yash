@@ -26,10 +26,10 @@ $this->registerModule(
 	/* Name */			"YASH",
 	/* Description*/	"Yet Another Syntax Highlighter",
 	/* Author */		"Pep and contributors",
-	/* Version */		'1.3',
+	/* Version */		'1.4',
 	array(
 		/* Permissions */	'permissions' =>	'contentadmin',
-		/* Priority */		'priority' =>		998,	// Must be less than dcLegacyEditor priority (ie 1000)
+		/* Priority */		'priority' =>		1001,	// Must be higher than dcLegacyEditor priority (ie 1000)
 		/* Type */			'type' =>			'plugin'
 	)
 );
