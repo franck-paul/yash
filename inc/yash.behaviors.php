@@ -12,7 +12,7 @@
 
 class yashBehaviors
 {
-	public static function adminPostEditor($editor='',$context='',array $tags=array())
+	public static function adminPostEditor($editor='',$context='',array $tags=array(),$syntax='')
 	{
 		if ($editor != 'dcLegacyEditor') return;
 
