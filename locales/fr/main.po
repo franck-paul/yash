@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dotclear 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-09 09:56+0200\n"
+"POT-Creation-Date: 2015-10-08 09:08+0200\n"
 "PO-Revision-Date: 2008-05-30 04:19+0100\n"
 "Last-Translator: Pep <>\n"
 "Language-Team: French\n"
@@ -62,6 +62,9 @@ msgstr ""
 msgid "Groovy"
 msgstr ""
 
+msgid "Haxe"
+msgstr ""
+
 msgid "Javascript/JSON"
 msgstr ""
 
@@ -95,6 +98,12 @@ msgstr ""
 msgid "SQL"
 msgstr ""
 
+msgid "Tap"
+msgstr ""
+
+msgid "TypeScript"
+msgstr ""
+
 msgid "Visual Basic"
 msgstr ""
 
@@ -106,9 +115,6 @@ msgstr "YASH - Sélecteur de syntaxe"
 
 msgid "Select the primary syntax of your code snippet."
 msgstr "Sélectionnez la syntaxe principale de votre extrait de code."
-
-msgid "Configuration successfully updated."
-msgstr "La configuration a été mise à jour."
 
 msgid "Django"
 msgstr ""
@@ -122,10 +128,10 @@ msgstr ""
 msgid "Fade to gray"
 msgstr ""
 
-msgid "Midnight"
+msgid "MD Ultra"
 msgstr ""
 
-msgid "Monokai"
+msgid "Midnight"
 msgstr ""
 
 msgid "RDark"
@@ -146,8 +152,11 @@ msgstr "Vous pouvez utiliser une CSS personnalisée en fournissant son adresse."
 msgid "A location beginning with a / is treated as absolute, else it is treated as relative to the blog's current theme URL"
 msgstr "Une adresse commençant par un / est considérée comme absolue, sinon elle est traitée comme relative à l'adresse du thème actuellement en usage sur le blog."
 
-msgid "Save configuration"
-msgstr "Enregistrer la configuration"
+#~ msgid "Configuration successfully updated."
+#~ msgstr "La configuration a été mise à jour."
+
+#~ msgid "Save configuration"
+#~ msgstr "Enregistrer la configuration"
 
 #~ msgid "Cancel"
 #~ msgstr "Annuler"
