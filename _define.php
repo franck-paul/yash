@@ -26,7 +26,7 @@ $this->registerModule(
 	/* Name */			"YASH",
 	/* Description*/	"Yet Another Syntax Highlighter",
 	/* Author */		"Pep and contributors",
-	/* Version */		'1.4',
+	/* Version */		'1.5',
 	array(
 		/* Permissions */	'permissions' =>	'contentadmin',
 		/* Priority */		'priority' =>		1001,	// Must be higher than dcLegacyEditor priority (ie 1000)

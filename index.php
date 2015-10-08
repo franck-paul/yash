@@ -57,6 +57,7 @@ if (!empty($_REQUEST['popup'])) {
 		'diff'			=> __('Diff/Patch'),
 		'erl'			=> __('Erlang'),
 		'groovy'		=> __('Groovy'),
+		'haxe'			=> __('Haxe'),
 		'js'			=> __('Javascript/JSON'),
 		'java'			=> __('Java'),
 		'jfx'			=> __('JavaFX'),
@@ -68,6 +69,8 @@ if (!empty($_REQUEST['popup'])) {
 		'sass'			=> __('SASS'),
 		'scala'			=> __('Scala'),
 		'sql'			=> __('SQL'),
+		'tap'			=> __('Tap'),
+		'ts'			=> __('TypeScript'),
 		'vb'			=> __('Visual Basic'),
 		'xml' 			=> __('XML/XSLT/XHTML/HTML')
 	);
@@ -132,8 +135,8 @@ $combo_theme = array(
 	__('Eclipse') => 'Eclipse',
 	__('Emacs') => 'Emacs',
 	__('Fade to gray') => 'FadeToGrey',
+	__('MD Ultra') => 'MDUltra',
 	__('Midnight') => 'Midnight',
-	__('Monokai') => 'Monokai',
 	__('RDark') => 'RDark'
 	);
 ?>
