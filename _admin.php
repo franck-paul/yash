@@ -25,7 +25,9 @@ if (!defined('DC_CONTEXT_ADMIN')) { return; }
 // dead but useful code, in order to have translations
 __('YASH').__('Yet Another Syntax Highlighter');
 
-$_menu['Blog']->addItem(__('YASH'),'plugin.php?p=yash','index.php?pf=yash/icon.png',
+$_menu['Blog']->addItem(__('YASH'),
+		'plugin.php?p=yash',
+		urldecode(dcPage::getPF('yash/icon.png')),
 		preg_match('/plugin.php\?p=yash(&.*)?$/',$_SERVER['REQUEST_URI']),
 		$core->auth->check('contentadmin',$core->blog->id));
 

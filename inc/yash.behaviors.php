@@ -14,10 +14,12 @@ class yashBehaviors
 {
 	public static function adminPostEditor($editor='',$context='',array $tags=array(),$syntax='')
 	{
+		global $core;
+
 		if ($editor != 'dcLegacyEditor') return;
 
 		return
-		'<script type="text/javascript" src="index.php?pf=yash/js/post.js"></script>'.
+		dcPage::jsLoad(urldecode(dcPage::getPF('yash/js/post.js')),$core->getVersion('yash')).
 		'<script type="text/javascript">'."\n".
 		"//<![CDATA[\n".
 		dcPage::jsVar('jsToolBar.prototype.elements.yash.title',__('Highlighted Code')).

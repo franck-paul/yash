@@ -79,7 +79,7 @@ if (!empty($_REQUEST['popup'])) {
 		'<html>'.
 		'<head>'.
 	  	'<title>'.__('YASH - Syntax Selector').'</title>'.
-	  	'<script type="text/javascript" src="index.php?pf=yash/js/popup.js"></script>'.
+	  	dcPage::jsLoad(urldecode(dcPage::getPF('yash/js/popup.js')),$core->getVersion('yash')).
 		'</head>'.
 		'<body>'.
 		'<h2>'.__('YASH - Syntax Selector').'</h2>'.
