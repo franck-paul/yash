@@ -49,15 +49,14 @@ class dcYASH
 			else {
 				$theme = (string)$core->blog->settings->yash->yash_theme;
 				if ($theme == '') {
-					$css = html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/css/shThemeDefault.css');
+					$css = $core->blog->getPF('yash/syntaxhighlighter/css/shThemeDefault.css');
 				} else {
-					$css = html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/css/shTheme'.$theme.'.css');
+					$css = $core->blog->getPF('yash/syntaxhighlighter/css/shTheme'.$theme.'.css');
 				}
 			}
 			echo
-				'<link rel="stylesheet" href="'
-				.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/css/shCore.css').'" type="text/css" media="screen" />'."\n".
-				'<link rel="stylesheet" href="'.$css.'" type="text/css" media="screen" />'."\n";
+				dcUtils::cssLoad($core->blog->getPF('yash/syntaxhighlighter/css/shCore.css')).
+				dcUtils::cssLoad($css);
 		}
 	}
 
@@ -69,14 +68,10 @@ class dcYASH
 		if ($core->blog->settings->yash->yash_active)
 		{
 			echo
-				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shCore.js').'"></script>'."\n".
-				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/shAutoloader.js').'"></script>'."\n".
-				'<script type="text/javascript">'."\n".
-				"//<![CDATA[\n".
-				'var yash_path = "'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/syntaxhighlighter/js/').'";'."\n".
-				"\n//]]>\n".
-				"</script>\n".
-				'<script type="text/javascript" src="'.html::stripHostURL($core->blog->getQmarkURL().'pf=yash/js/public.js').'"></script>'."\n";
+				dcUtils::jsLoad($core->blog->getPF('yash/syntaxhighlighter/js/shCore.js')).
+				dcUtils::jsLoad($core->blog->getPF('yash/syntaxhighlighter/js/shAutoloader.js')).
+				dcUtils::jsVar('yash_path',$core->blog->getPF('yash/syntaxhighlighter/js/')).
+				dcUtils::jsLoad($core->blog->getPF('yash/js/public.js'));
 		}
 	}
 }
