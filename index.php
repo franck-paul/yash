@@ -131,14 +131,17 @@ if (!empty($_POST['saveconfig'])) {
 echo dcPage::notices();
 
 $combo_theme = array(
-	__('Default') => 'Default',
-	__('Django') => 'Django',
-	__('Eclipse') => 'Eclipse',
-	__('Emacs') => 'Emacs',
-	__('Fade to gray') => 'FadeToGrey',
-	__('MD Ultra') => 'MDUltra',
-	__('Midnight') => 'Midnight',
-	__('RDark') => 'RDark'
+	__('Default')         => 'Default',
+	__('Django')          => 'Django',
+	__('Eclipse')         => 'Eclipse',
+	__('Emacs')           => 'Emacs',
+	__('Fade to gray')    => 'FadeToGrey',
+	__('MD Ultra')        => 'MDUltra',
+	__('Midnight')        => 'Midnight',
+	__('RDark')           => 'RDark',
+	__('Solarized Dark')  => 'SolarizedDark',
+	__('Solarized Light') => 'SolarizedLight',
+	__('Tomorrow Night')  => 'TomorrowNight'
 	);
 ?>
 
