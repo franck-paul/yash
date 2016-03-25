@@ -23,13 +23,14 @@ SyntaxHighlighter.autoloader.apply(null, shGetPath(
   'perl pl                @shBrushPerl.js',
   'php                    @shBrushPhp.js',
   'text plain             @shBrushPlain.js',
-  'ps powershell	      @shBrushPowerShell.js',
+  'ps powershell	        @shBrushPowerShell.js',
   'py python              @shBrushPython.js',
   'ruby rails ror rb      @shBrushRuby.js',
   'sass scss              @shBrushSass.js',
   'scala                  @shBrushScala.js',
   'sql                    @shBrushSql.js',
   'vb vbnet               @shBrushVb.js',
-  'xml xhtml xslt html    @shBrushXml.js'
+  'xml xhtml xslt html    @shBrushXml.js',
+  'yaml yaml              @shBrushYaml.js'
 ));
 SyntaxHighlighter.all();

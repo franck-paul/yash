@@ -72,7 +72,8 @@ if (!empty($_REQUEST['popup'])) {
 		'tap'			=> __('Tap'),
 		'ts'			=> __('TypeScript'),
 		'vb'			=> __('Visual Basic'),
-		'xml' 			=> __('XML/XSLT/XHTML/HTML')
+		'xml' 			=> __('XML/XSLT/XHTML/HTML'),
+		'yaml'			=> __('Yaml')
 	);
 
 	echo
