@@ -136,6 +136,7 @@ $combo_theme = array(
 	__('Eclipse')         => 'Eclipse',
 	__('Emacs')           => 'Emacs',
 	__('Fade to gray')    => 'FadeToGrey',
+	__('Material')        => 'Material',
 	__('MD Ultra')        => 'MDUltra',
 	__('Midnight')        => 'Midnight',
 	__('RDark')           => 'RDark',

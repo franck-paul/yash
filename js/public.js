@@ -33,4 +33,5 @@ SyntaxHighlighter.autoloader.apply(null, shGetPath(
   'xml xhtml xslt html    @shBrushXml.js',
   'yaml yaml              @shBrushYaml.js'
 ));
+SyntaxHighlighter.defaults['toolbar'] = false;
 SyntaxHighlighter.all();
