@@ -7,6 +7,7 @@
  *
  * @version
  * 3.0.9 (Thu, 04 Dec 2014 12:32:21 GMT)
+ * 3.0.10 (Mon, 03 Oct 2016 06:03:52 GMT) - Franck : + some units and flexbox
  *
  * @copyright
  * Copyright (C) 2004-2013 Alex Gorbatchev.
@@ -25,7 +26,7 @@
 		{
 			return '\\b([a-z_]|)' + str.replace(/ /g, '(?=:)\\b|\\b([a-z_\\*]|\\*|)') + '(?=:)\\b';
 		};
-	
+
 		function getValuesCSS(str)
 		{
 			return '\\b' + str.replace(/ /g, '(?!-)(?!:)\\b|\\b()') + '\:\\b';
@@ -44,7 +45,8 @@
 						'page-break-after page-break-before page-break-inside pause pause-after pause-before pitch pitch-range play-during position ' +
 						'quotes right richness size slope src speak-header speak-numeral speak-punctuation speak speech-rate stemh stemv stress ' +
 						'table-layout text-align top text-decoration text-indent text-shadow text-transform unicode-bidi unicode-range units-per-em ' +
-						'vertical-align visibility voice-family volume white-space widows width widths word-spacing x-height z-index';
+						'vertical-align visibility voice-family volume white-space widows width widths word-spacing x-height z-index ' +
+						'flex-direction flex-wrap flex-flow justify-content align-items align-content order flex-grow flex-shrink flex-basis flex align-self';
 
 		var values =	'above absolute all always aqua armenian attr aural auto avoid baseline behind below bidi-override black blink block blue bold bolder '+
 						'both bottom braille capitalize caption center center-left center-right circle close-quote code collapse compact condensed '+
@@ -59,25 +61,27 @@
 						'small small-caps small-caption smaller soft solid speech spell-out square s-resize static status-bar sub super sw-resize '+
 						'table-caption table-cell table-column table-column-group table-footer-group table-header-group table-row table-row-group teal '+
 						'text-bottom text-top thick thin top transparent tty tv ultra-condensed ultra-expanded underline upper-alpha uppercase upper-latin '+
-						'upper-roman url visible wait white wider w-resize x-fast x-high x-large x-loud x-low x-slow x-small x-soft xx-large xx-small yellow';
+						'upper-roman url visible wait white wider w-resize x-fast x-high x-large x-loud x-low x-slow x-small x-soft xx-large xx-small yellow ' +
+						'flex row row-reverse column column-reverse nowrap wrap wrap-reverse flex-start flex-end center space-between space-around baseline stretch';
 
 		var fonts =		'[mM]onospace [tT]ahoma [vV]erdana [aA]rial [hH]elvetica [sS]ans-serif [sS]erif [cC]ourier mono sans serif';
-	
+
 		this.regexList = [
 			{ regex: SyntaxHighlighter.regexLib.multiLineCComments,		css: 'comments' },	// multiline comments
 			{ regex: SyntaxHighlighter.regexLib.doubleQuotedString,		css: 'string' },	// double quoted strings
 			{ regex: SyntaxHighlighter.regexLib.singleQuotedString,		css: 'string' },	// single quoted strings
 			{ regex: /\#[a-fA-F0-9]{3,6}/g,								css: 'value' },		// html colors
-			{ regex: /(-?\d+)(\.\d+)?(px|em|pt|\:|\%|)/g,				css: 'value' },		// sizes
+			{ regex: /(-?\d+)(\.\d+)?(px|em|pt|\:|\%|ex|ch|rem|vh|vw|vmin|vmax|mm|q|cm|in|pc)/g,
+																		css: 'value' },		// sizes
 			{ regex: /!important/g,										css: 'color3' },	// !important
 			{ regex: new RegExp(getKeywordsCSS(keywords), 'gm'),		css: 'keyword' },	// keywords
 			{ regex: new RegExp(getValuesCSS(values), 'g'),				css: 'value' },		// values
 			{ regex: new RegExp(this.getKeywords(fonts), 'g'),			css: 'color1' }		// fonts
 			];
 
-		this.forHtmlScript({ 
-			left: /(&lt;|<)\s*style.*?(&gt;|>)/gi, 
-			right: /(&lt;|<)\/\s*style\s*(&gt;|>)/gi 
+		this.forHtmlScript({
+			left: /(&lt;|<)\s*style.*?(&gt;|>)/gi,
+			right: /(&lt;|<)\/\s*style\s*(&gt;|>)/gi
 			});
 	};
 

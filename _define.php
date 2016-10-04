@@ -26,7 +26,7 @@ $this->registerModule(
 	/* Name */			"YASH",
 	/* Description*/	"Yet Another Syntax Highlighter",
 	/* Author */		"Pep and contributors",
-	/* Version */		'1.6.2',
+	/* Version */		'1.6.3',
 	array(
 		/* Dependencies */	'requires' =>		array(array('core','2.9')),
 		/* Permissions */	'permissions' =>	'contentadmin',
