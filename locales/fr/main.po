@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dotclear 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-08 09:08+0200\n"
+"POT-Creation-Date: 2017-03-04 16:56+0100\n"
 "PO-Revision-Date: 2008-05-30 04:19+0100\n"
 "Last-Translator: Pep <>\n"
 "Language-Team: French\n"
@@ -110,6 +110,9 @@ msgstr ""
 msgid "XML/XSLT/XHTML/HTML"
 msgstr ""
 
+msgid "Yaml"
+msgstr ""
+
 msgid "YASH - Syntax Selector"
 msgstr "YASH - Sélecteur de syntaxe"
 
@@ -128,6 +131,9 @@ msgstr ""
 msgid "Fade to gray"
 msgstr ""
 
+msgid "Material"
+msgstr ""
+
 msgid "MD Ultra"
 msgstr ""
 
@@ -137,11 +143,20 @@ msgstr ""
 msgid "RDark"
 msgstr ""
 
+msgid "Solarized Dark"
+msgstr ""
+
+msgid "Solarized Light"
+msgstr ""
+
+msgid "Tomorrow Night"
+msgstr ""
+
 msgid "Enable YASH"
 msgstr "Activer YASH"
 
-msgid "Theme:"
-msgstr "Thème :"
+msgid "Presentation"
+msgstr "Présentation"
 
 msgid "Use custom CSS:"
 msgstr "CSS personnalisée :"
@@ -151,6 +166,21 @@ msgstr "Vous pouvez utiliser une CSS personnalisée en fournissant son adresse."
 
 msgid "A location beginning with a / is treated as absolute, else it is treated as relative to the blog's current theme URL"
 msgstr "Une adresse commençant par un / est considérée comme absolue, sinon elle est traitée comme relative à l'adresse du thème actuellement en usage sur le blog."
+
+msgid "Hide gutter with line numbers"
+msgstr "Masquer la colonne avec les numéros de ligne"
+
+msgid "SyntaxeHL compatibility mode"
+msgstr "Mode de compatibilité avec SyntaxeHL"
+
+msgid "All SyntaxeHL languages is not supported by Yash (see documentation)."
+msgstr "Tous les langages proposés par SyntaxeHL ne sont pas supportés (voir la documentation)."
+
+msgid "Will be applied on future edition of posts containing SyntaxeHL macros (///[language]…///)."
+msgstr "Sera appliqué aux prochaines éditions des billets contenant des macros SyntaxeHL (///[langage]…///)."
+
+#~ msgid "Theme:"
+#~ msgstr "Thème :"
 
 #~ msgid "Configuration successfully updated."
 #~ msgstr "La configuration a été mise à jour."

@@ -22,26 +22,13 @@
 
 if (!defined('DC_CONTEXT_ADMIN')) { exit; }
 
-// Setting default parameters if missing configuration
+// Getting current parameters if any (get global parameters if not)
 $core->blog->settings->addNamespace('yash');
-if (is_null($core->blog->settings->yash->yash_active)) {
-	try {
-		// Default state is active if the comments are configured to allow wiki syntax
-		$core->blog->settings->yash->put('yash_active',false,'boolean',true);
-		$core->blog->settings->yash->put('yash_theme','Default','string',true);
-		$core->blog->settings->yash->put('yash_custom_css','','string',true);
-		$core->blog->triggerBlog();
-		http::redirect($p_url);
-	}
-	catch (Exception $e) {
-		$core->error->add($e->getMessage());
-	}
-}
-
-// Getting current parameters
 $active = (boolean)$core->blog->settings->yash->yash_active;
 $theme = (string)$core->blog->settings->yash->yash_theme;
 $custom_css = (string)$core->blog->settings->yash->yash_custom_css;
+$hide_gutter = (boolean)$core->blog->settings->yash->yash_hide_gutter;
+$syntaxehl = (boolean)$core->blog->settings->yash->yash_syntaxehl;
 
 if (!empty($_REQUEST['popup'])) {
 	$yash_brushes = array(
@@ -87,8 +74,8 @@ if (!empty($_REQUEST['popup'])) {
 		'<form id="yash-form" action="'.$p_url.'&amp;popup=1" method="get">'.
 		'<p><label>'.__('Select the primary syntax of your code snippet.').
 		form::combo('syntax',array_flip($yash_brushes)).'</label></p>'.
-		'<p><a id="yash-cancel" class="button" href="#">'.__('Cancel').'</a> - '.
-		'<strong><a id="yash-ok" class="button" href="#">'.__('Ok').'</a></strong></p>'.
+		'<p><button id="yash-cancel">'.__('Cancel').'</button> - '.
+		'<button id="yash-ok"><strong>'.__('Ok').'</strong></button></p>'.
 		'</form>'.
 		'</body>'.
 		'</html>';
@@ -103,9 +90,13 @@ if (!empty($_POST['saveconfig'])) {
 		$active = (empty($_POST['active'])) ? false : true;
 		$theme = (empty($_POST['theme'])) ? 'Default' : $_POST['theme'];
 		$custom_css = (empty($_POST['custom_css'])) ? '' : html::sanitizeURL($_POST['custom_css']);
+		$hide_gutter = (empty($_POST['hide_gutter'])) ? false : true;
+		$syntaxehl = (empty($_POST['syntaxehl'])) ? false : true;
 		$core->blog->settings->yash->put('yash_active',$active,'boolean');
 		$core->blog->settings->yash->put('yash_theme',$theme,'string');
 		$core->blog->settings->yash->put('yash_custom_css',$custom_css,'string');
+		$core->blog->settings->yash->put('yash_hide_gutter',$hide_gutter,'boolean');
+		$core->blog->settings->yash->put('yash_syntaxehl',$syntaxehl,'boolean');
 		$core->blog->triggerBlog();
 		dcPage::addSuccessNotice(__('Configuration successfully updated.'));
 		http::redirect($p_url);
@@ -149,11 +140,11 @@ $combo_theme = array(
 <div id="yash_options">
 	<form method="post" action="<?php http::getSelfURI(); ?>">
 		<p>
-			<?php echo form::checkbox('active', 1, $active); ?>
+			<?php echo form::checkbox('active',1,$active); ?>
 			<label class="classic" for="active">&nbsp;<?php echo __('Enable YASH');?></label>
 		</p>
 
-		<h3><?php echo __('Options'); ?></h3>
+		<h3><?php echo __('Presentation'); ?></h3>
 		<p class="field"><label for="theme" class="classic"><?php echo __('Theme:'); ?> </label>
 			<?php echo form::combo('theme',$combo_theme,$theme); ?>
 		</p>
@@ -165,7 +156,18 @@ $combo_theme = array(
 			<?php echo __('You can use a custom CSS by providing its location.'); ?><br />
 			<?php echo __('A location beginning with a / is treated as absolute, else it is treated as relative to the blog\'s current theme URL'); ?>
 		</p>
-
+		<p>
+			<?php echo form::checkbox('hide_gutter',1,$hide_gutter); ?>
+			<label class="classic" for="hide_gutter">&nbsp;<?php echo __('Hide gutter with line numbers'); ?></label>
+		</p>
+		<h3><?php echo __('Options'); ?></h3>
+		<p>
+			<?php echo form::checkbox('syntaxehl',1,$syntaxehl); ?>
+			<label class="classic" for="syntaxehl">&nbsp;<?php echo __('SyntaxeHL compatibility mode'); ?></label>
+		</p>
+		<p class="info">
+			<?php echo __('Will be applied on future edition of posts containing SyntaxeHL macros (///[language]…///).'); ?><br /><?php echo __('All SyntaxeHL languages is not supported by Yash (see documentation).'); ?>
+		</p>
 		<p><input type="hidden" name="p" value="yash" />
 			<?php echo $core->formNonce(); ?>
 			<input type="submit" name="saveconfig" value="<?php echo __('Save configuration'); ?>" />

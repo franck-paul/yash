@@ -22,8 +22,8 @@
 
 if (!defined('DC_RC_PATH')) { return; }
 
-$core->addBehavior('publicHeadContent',		array('dcYASH','publicHeadContent'));
-$core->addBehavior('publicFooterContent',	array('dcYASH','publicFooterContent'));
+$core->addBehavior('publicHeadContent',array('dcYASH','publicHeadContent'));
+$core->addBehavior('publicFooterContent',array('dcYASH','publicFooterContent'));
 
 class dcYASH
 {
@@ -71,6 +71,7 @@ class dcYASH
 				dcUtils::jsLoad($core->blog->getPF('yash/syntaxhighlighter/js/shCore.js')).
 				dcUtils::jsLoad($core->blog->getPF('yash/syntaxhighlighter/js/shAutoloader.js')).
 				dcUtils::jsVar('yash_path',$core->blog->getPF('yash/syntaxhighlighter/js/')).
+				dcUtils::jsVar('yash_gutter',($core->blog->settings->yash->yash_hide_gutter ? 0 : 1)).
 				dcUtils::jsLoad($core->blog->getPF('yash/js/public.js'));
 		}
 	}

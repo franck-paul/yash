@@ -20,17 +20,28 @@
 #
 # ***** END LICENSE BLOCK *****
 
-if (!defined('DC_RC_PATH')) { return; }
+if (!defined('DC_CONTEXT_ADMIN')) { return; }
 
-$this->registerModule(
-	/* Name */			"YASH",
-	/* Description*/	"Yet Another Syntax Highlighter",
-	/* Author */		"Pep and contributors",
-	/* Version */		'1.7',
-	array(
-		/* Dependencies */	'requires' =>		array(array('core','2.9')),
-		/* Permissions */	'permissions' =>	'contentadmin',
-		/* Priority */		'priority' =>		1001,	// Must be higher than dcLegacyEditor priority (ie 1000)
-		/* Type */			'type' =>			'plugin'
-	)
-);
+$new_version = $core->plugins->moduleInfo('yash','version');
+$old_version = $core->getVersion('YASH');
+
+if (version_compare($old_version,$new_version,'>=')) return;
+
+try
+{
+	$core->blog->settings->addNamespace('yash');
+	$core->blog->settings->yash->put('yash_active',false,'boolean','',false,true);
+	$core->blog->settings->yash->put('yash_theme','Default','string','',false,true);
+	$core->blog->settings->yash->put('yash_custom_css','','string','',false,true);
+	$core->blog->settings->yash->put('yash_hide_gutter',false,'boolean','',false,true);
+	$core->blog->settings->yash->put('yash_syntaxehl',false,'boolean','',false,true);
+
+	$core->setVersion('YASH',$new_version);
+
+	return true;
+}
+catch (Exception $e)
+{
+	$core->error->add($e->getMessage());
+}
+return false;

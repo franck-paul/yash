@@ -34,4 +34,5 @@ SyntaxHighlighter.autoloader.apply(null, shGetPath(
   'yaml yaml              @shBrushYaml.js'
 ));
 SyntaxHighlighter.defaults['toolbar'] = false;
+SyntaxHighlighter.defaults['gutter'] = (yash_gutter ? true : false);
 SyntaxHighlighter.all();
