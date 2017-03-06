@@ -3,6 +3,8 @@ Yash plugin for Dotclear 2
 
 Packaging [Yash script](http://alexgorbatchev.com/SyntaxHighlighter) from Alex Gorbatchev
 
+See [full documentation](mkdocs/site/index.html)
+
 Available syntaxes
 ------------------
 

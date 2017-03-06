@@ -18,6 +18,7 @@ pages:
 # Theme (doc: http://squidfunk.github.io/mkdocs-material/)
 theme: material
 extra:
+#  logo: 'img/icon-big.png'
   palette:
     primary: 'Deep Purple'
     accent: 'Pink'
@@ -39,7 +40,8 @@ markdown_extensions:
     guess_lang: false
 - footnotes
 - pymdownx.arithmatex
-- pymdownx.betterem(smart_enable=all)
+- pymdownx.betterem:
+    smart_enable: all
 - pymdownx.caret
 - pymdownx.critic
 - pymdownx.emoji:
@@ -49,5 +51,6 @@ markdown_extensions:
 - pymdownx.mark
 - pymdownx.smartsymbols
 - pymdownx.superfences
-- pymdownx.tasklist(custom_checkbox=true)
+- pymdownx.tasklist:
+    custom_checkbox: true
 - pymdownx.tilde
