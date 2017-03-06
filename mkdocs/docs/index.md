@@ -1,5 +1,8 @@
 # YASH syntax highlighter plugin for Dotclear 2
 
+!!! note
+    Current release: 1.7 (2016-03-04)
+
 ![](img/icon-big.png)
 
 This plugin use the [SyntaxHighlighter script](http://alexgorbatchev.com/SyntaxHighlighter) from Alex Gorbatchev to render code blocks in posts and pages with syntax highlighting.
