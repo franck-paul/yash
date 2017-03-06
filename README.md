@@ -48,15 +48,19 @@ Syntax
 
 Wiki:
 
-    ///yash language_code
-    … code …
-	///
+```
+///yash language_code
+… code …
+///
+```
 
 HTML/Markdown:
 
-	<pre class="brush: language_code">
-	… code …
-	</pre>
+```html
+<pre class="brush: language_code">
+… code …
+</pre>
+```
 
 A toolbar button is available for dcLegacyEditor (wiki/markown and wysiwyg in source mode) to select syntax
 
