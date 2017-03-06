@@ -25,7 +25,28 @@ In **HTML** (source) or **Markdown** modes:
 </pre>
 ```
 
-!!! note
+Replacing ```language_code``` by one of the [following syntaxes](#available-syntaxes)
+
+Exemple with this Javascript code:
+
+```
+///yash js
+function findSequence(goal) {
+  function find(start, history) {
+    if (start == goal)
+      return history;
+    else if (start > goal)
+      return null;
+    else
+      return find(start + 5, "(" + history + " + 5)") ||
+             find(start * 3, "(" + history + " * 3)");
+  }
+  return find(1, "1");
+}
+///
+```
+
+!!! tip
 	A toolbar button is available for dcLegacyEditor (wiki/markown and wysiwyg in source mode) to select syntax:  
 
 	![dcLegacyEditor button](../img/yash-toolbar.jpg)

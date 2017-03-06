@@ -4,7 +4,7 @@ SyntaxeHL compatibility
 the ```///[language_code]``` wiki macro is supported by YASH for the following syntaxes if enabled in the [settings](settings.md#options):
 
 !!! note
-	If not specified, the **plain** YASH language code will be used.
+	If not specified, the **plain** YASH language code will be used (see [available syntaxes](usage#available-syntaxes)).
 
 
 | Syntaxes      | Yash langage code |

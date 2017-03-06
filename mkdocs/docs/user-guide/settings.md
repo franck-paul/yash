@@ -2,7 +2,8 @@ Settings
 ========
 
 !!! note
-	All settings done on the main page of the plugin is only related to the current blog
+	All settings done on the main page of the plugin is only related to the **current blog**
+
 
 Activation
 ----------
@@ -19,9 +20,10 @@ Different themes is provided with the plugin.
 
 ![Presentation options](../img/yash-presentation.jpg)
 
-You may also provide a **user-defined CSS** URL to be used rather than the selected one. The URL beginning with an / is assumed to be absolute else it will be relative to the theme URL used for the blog.
+You may also provide a **user-defined CSS** URL to be used rather than the selected one. The URL beginning with a ```/``` is assumed to be **absolute** else it will be relative to the theme URL used for the blog.
 
 You can also **hide the gutter** containing the line-numbers of the rendered code by the plugin.
+
 
 Options
 -------
