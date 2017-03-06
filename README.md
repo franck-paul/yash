@@ -4,6 +4,7 @@ Yash plugin for Dotclear 2
 Packaging [Yash script](http://alexgorbatchev.com/SyntaxHighlighter) from Alex Gorbatchev
 
 See [full documentation](mkdocs/site/index.html)
+(run ```mkdocs build``` in mkdocs folder to build the static documentation site folder)
 
 Available syntaxes
 ------------------
