@@ -31,6 +31,7 @@ $this->registerModule(
 		/* Dependencies */	'requires' =>		array(array('core','2.9')),
 		/* Permissions */	'permissions' =>	'contentadmin',
 		/* Priority */		'priority' =>		1001,	// Must be higher than dcLegacyEditor priority (ie 1000)
-		/* Type */			'type' =>			'plugin'
+		/* Type */			'type' =>			'plugin',
+		/* Details */		'details' =>		'https://open-time.net/docs/plugins/yash'
 	)
 );
