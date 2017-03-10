@@ -31,3 +31,6 @@ Options
 The plugin is able to interpret the SyntaxeHL wiki macro form if activated here. See [according documentation](syntaxehl.md) for usage.
 
 ![Other options](../img/yash-options.jpg)
+
+!!! warning
+	You **should not** have the both plugins (Yash and SyntaxeHL) installed and activated on a blog else you may encountered unpredictable results.

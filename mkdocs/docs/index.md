@@ -1,7 +1,7 @@
 # YASH syntax highlighter plugin for Dotclear 2
 
 !!! tip "Current release"
-    1.7 (2016-03-04)
+    1.7 (2017-03-04)
 
 ![](img/icon-big.png)
 

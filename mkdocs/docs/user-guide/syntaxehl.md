@@ -1,13 +1,19 @@
 SyntaxeHL compatibility
 =======================
 
-the ```///[language_code]``` wiki macro is supported by YASH for the following syntaxes if enabled in the [settings](settings.md#options):
+the ```///[language_code]``` wiki macro is supported by YASH for the following syntaxes if enabled in the [settings](settings.md#options). See below the corresponding YASH language code used regarding on SyntaxeHL one.
+
+As SyntaxeHL worked differently than YASH[^1], only further edition of existing posts and pages will be treated by YASH.
+
+[^1]: SyntaxeHL is a PHP library and then render code in content juste before it will be saved on the server database. YASH will only be run when the code will be displayed, in the client's browser.
+
+Syntaxes supported
+------------------
 
 !!! note
 	If not specified, the **plain** YASH language code will be used (see [available syntaxes](usage#available-syntaxes)).
 
-
-| Syntaxes      | Yash langage code |
+| SyntaxesHL    | YASH language     |
 | ------------- | ----------------- |
 | 4cs           |                   |
 | abap          |                   |
