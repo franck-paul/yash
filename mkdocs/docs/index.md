@@ -1,7 +1,7 @@
 # YASH syntax highlighter plugin for Dotclear 2
 
 !!! tip "Current release"
-    [1.7 — 2017-03-04](https://open-time.net/post/2017/03/04/Plugin-Yash-17-pour-Dotclear) (Dotclear 2.9+)
+    [1.7 — 2017-03-04][ot-dl] (Dotclear 2.9+)
 
 ![](img/icon-big.png)
 
@@ -54,7 +54,7 @@ Will be rendered as (using Material theme):
 The plugin may be downloaded and installed from following sources:
 
  * [DotAddict](http://plugins.dotaddict.org/dc2/details/yash)
- * [Open-Time](https://open-time.net/post/2017/03/04/Plugin-Yash-17-pour-Dotclear)
+ * [Open-Time][ot-dl]
 
 Or directly from the administration plugins page of Dotclear
 
@@ -63,3 +63,5 @@ Or directly from the administration plugins page of Dotclear
 The plugin **must** be activated before being used on your blog[^1]. See [user guide](user-guide/usage) for more information.
 
 [^1]: Go to the main page of the YASH plugin to activated it (Blog section of the Dotclear admin menu).
+
+[ot-dl]: https://open-time.net/post/2017/03/04/Plugin-Yash-17-pour-Dotclear
