@@ -7,7 +7,7 @@
 
 This plugin use the [SyntaxHighlighter script](http://alexgorbatchev.com/SyntaxHighlighter) from Alex Gorbatchev to render code blocks in posts and pages with syntax highlighting.
 
-It supports 28 [syntaxes](/user-guide/usage/#available-syntaxes) and provides 12 different [themes](/user-guide/settings#presentation).
+It supports 28 [syntaxes](/user-guide/usage#available-syntaxes) and provides 12 different [themes](/user-guide/settings#presentation).
 
 ## Example
 
@@ -60,6 +60,6 @@ Or directly from the administration plugins page of Dotclear
 
 ## Usage
 
-The plugin **must** be activated before being used on your blog[^1]. See [user guide](user-guide/usage.md) for more information.
+The plugin **must** be activated before being used on your blog[^1]. See [user guide](user-guide/usage) for more information.
 
 [^1]: Go to the main page of the YASH plugin to activated it (Blog section of the Dotclear admin menu).

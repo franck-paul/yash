@@ -1,7 +1,7 @@
 SyntaxeHL compatibility
 =======================
 
-the ```///[language_code]``` wiki macro is supported by YASH for the following syntaxes if enabled in the [settings](settings.md#options). See below the corresponding YASH language code used regarding on SyntaxeHL one.
+the ```///[language_code]``` wiki macro is supported by YASH for the following syntaxes if enabled in the [settings](settings#options). See below the corresponding YASH language code used regarding on SyntaxeHL one.
 
 As SyntaxeHL worked differently than YASH[^1], only further edition of existing posts and pages will be treated by YASH.
 

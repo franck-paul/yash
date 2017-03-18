@@ -28,7 +28,7 @@ You can also **hide the gutter** containing the line-numbers of the rendered cod
 Options
 -------
 
-The plugin is able to interpret the SyntaxeHL wiki macro form if activated here. See [according documentation](syntaxehl.md) for usage.
+The plugin is able to interpret the SyntaxeHL wiki macro form if activated here. See [according documentation](syntaxehl) for usage.
 
 ![Other options](../img/yash-options.jpg)
 
