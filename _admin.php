@@ -1,34 +1,26 @@
 <?php
-# ***** BEGIN LICENSE BLOCK *****
-# This file is part of YASH, a plugin for DotClear2.
-# Copyright (c) 2008 Pep and contributors. All rights
-# reserved.
-#
-# This plugin is free software; you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or
-# (at your option) any later version.
-#
-# This plugin is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this plugin; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-#
-# ***** END LICENSE BLOCK *****
+/**
+ * @brief YASH, a plugin for Dotclear 2
+ *
+ * @package Dotclear
+ * @subpackage Plugins
+ *
+ * @author Pep
+ * @author Franck Paul
+ *
+ * @copyright Pep
+ * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
+ */
 
-if (!defined('DC_CONTEXT_ADMIN')) { return; }
+if (!defined('DC_CONTEXT_ADMIN')) {return;}
 
 // dead but useful code, in order to have translations
-__('YASH').__('Yet Another Syntax Highlighter');
+__('YASH') . __('Yet Another Syntax Highlighter');
 
 $_menu['Blog']->addItem(__('YASH'),
-		'plugin.php?p=yash',
-		urldecode(dcPage::getPF('yash/icon.png')),
-		preg_match('/plugin.php\?p=yash(&.*)?$/',$_SERVER['REQUEST_URI']),
-		$core->auth->check('contentadmin',$core->blog->id));
+    'plugin.php?p=yash',
+    urldecode(dcPage::getPF('yash/icon.png')),
+    preg_match('/plugin.php\?p=yash(&.*)?$/', $_SERVER['REQUEST_URI']),
+    $core->auth->check('contentadmin', $core->blog->id));
 
-$core->addBehavior('adminPostEditor',array('yashBehaviors','adminPostEditor'));
+$core->addBehavior('adminPostEditor', array('yashBehaviors', 'adminPostEditor'));

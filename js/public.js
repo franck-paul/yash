@@ -1,10 +1,13 @@
-function shGetPath()
-{
-	var args = arguments, result = [];
-	for(var i = 0; i < args.length; i++)
-		result.push(args[i].replace('@', yash_path));
-	return result;
-};
+/*global SyntaxHighlighter, yash_path, yash_gutter */
+'use strict';
+
+function shGetPath() {
+  var args = arguments,
+    result = [];
+  for (var i = 0; i < args.length; i++)
+    result.push(args[i].replace('@', yash_path));
+  return result;
+}
 SyntaxHighlighter.autoloader.apply(null, shGetPath(
   'applescript            @shBrushAppleScript.js',
   'actionscript3 as3      @shBrushAS3.js',
@@ -23,7 +26,7 @@ SyntaxHighlighter.autoloader.apply(null, shGetPath(
   'perl pl                @shBrushPerl.js',
   'php                    @shBrushPhp.js',
   'text plain             @shBrushPlain.js',
-  'ps powershell	        @shBrushPowerShell.js',
+  'ps powershell          @shBrushPowerShell.js',
   'py python              @shBrushPython.js',
   'ruby rails ror rb      @shBrushRuby.js',
   'sass scss              @shBrushSass.js',
@@ -33,6 +36,6 @@ SyntaxHighlighter.autoloader.apply(null, shGetPath(
   'xml xhtml xslt html    @shBrushXml.js',
   'yaml yaml              @shBrushYaml.js'
 ));
-SyntaxHighlighter.defaults['toolbar'] = false;
-SyntaxHighlighter.defaults['gutter'] = (yash_gutter ? true : false);
+SyntaxHighlighter.defaults.toolbar = false;
+SyntaxHighlighter.defaults.gutter = (yash_gutter ? true : false);
 SyntaxHighlighter.all();
