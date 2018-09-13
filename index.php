@@ -23,7 +23,7 @@ $hide_gutter = (boolean) $core->blog->settings->yash->yash_hide_gutter;
 $syntaxehl   = (boolean) $core->blog->settings->yash->yash_syntaxehl;
 
 if (!empty($_REQUEST['popup'])) {
-    $yash_brushes = array(
+    $yash_brushes = [
         'plain'       => __('Plain Text'),
         'applescript' => __('AppleScript'),
         'as3'         => __('ActionScript3'),
@@ -53,7 +53,7 @@ if (!empty($_REQUEST['popup'])) {
         'vb'          => __('Visual Basic'),
         'xml'         => __('XML/XSLT/XHTML/HTML'),
         'yaml'        => __('Yaml')
-    );
+    ];
 
     echo
     '<html>' .
@@ -105,13 +105,13 @@ if (!empty($_POST['saveconfig'])) {
 <body>
 <?php
 echo dcPage::breadcrumb(
-    array(
+    [
         html::escapeHTML($core->blog->name) => '',
         __('YASH')                          => ''
-    ));
+    ]);
 echo dcPage::notices();
 
-$combo_theme = array(
+$combo_theme = [
     __('Default')         => 'Default',
     __('Django')          => 'Django',
     __('Eclipse')         => 'Eclipse',
@@ -124,7 +124,7 @@ $combo_theme = array(
     __('Solarized Dark')  => 'SolarizedDark',
     __('Solarized Light') => 'SolarizedLight',
     __('Tomorrow Night')  => 'TomorrowNight'
-);
+];
 ?>
 
 <div id="yash_options">

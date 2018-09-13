@@ -18,12 +18,12 @@ $this->registerModule(
     "YASH",                           // Name
     "Yet Another Syntax Highlighter", // Description
     "Pep and contributors",           // Author
-    '1.7',                            // Version
-    array(
-        'requires'    => array(array('core', '2.9')),               // Dependencies
+    '1.8',                            // Version
+    [
+        'requires'    => [['core', '2.13']],                        // Dependencies
         'permissions' => 'contentadmin',                            // Permissions
-        'priority'    => 1001,                                      // Must be higher than dcLegacyEditor priority (ie 1000) // Priority
+        'priority'    => 1001,                                      // Must be higher than dcLegacyEditor priority (ie 1000)
         'type'        => 'plugin',                                  // Type
         'details'     => 'https://open-time.net/docs/plugins/yash' // Details
-    )
+    ]
 );

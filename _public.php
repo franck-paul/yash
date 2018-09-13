@@ -14,8 +14,8 @@
 
 if (!defined('DC_RC_PATH')) {return;}
 
-$core->addBehavior('publicHeadContent', array('dcYASH', 'publicHeadContent'));
-$core->addBehavior('publicFooterContent', array('dcYASH', 'publicFooterContent'));
+$core->addBehavior('publicHeadContent', ['dcYASH', 'publicHeadContent']);
+$core->addBehavior('publicFooterContent', ['dcYASH', 'publicFooterContent']);
 
 class dcYASH
 {

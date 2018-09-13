@@ -23,4 +23,4 @@ $_menu['Blog']->addItem(__('YASH'),
     preg_match('/plugin.php\?p=yash(&.*)?$/', $_SERVER['REQUEST_URI']),
     $core->auth->check('contentadmin', $core->blog->id));
 
-$core->addBehavior('adminPostEditor', array('yashBehaviors', 'adminPostEditor'));
+$core->addBehavior('adminPostEditor', ['yashBehaviors', 'adminPostEditor']);

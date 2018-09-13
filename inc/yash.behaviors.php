@@ -14,7 +14,7 @@
 
 class yashBehaviors
 {
-    private static $syntaxehl_brushes = array(
+    private static $syntaxehl_brushes = [
         '4cs'           => '',
         'abap'          => '',
         'actionscript'  => 'as3',
@@ -191,9 +191,9 @@ class yashBehaviors
         'xorg_conf'     => '',
         'xpp'           => '',
         'z80'           => ''
-    );
+    ];
 
-    public static function adminPostEditor($editor = '', $context = '', array $tags = array(), $syntax = '')
+    public static function adminPostEditor($editor = '', $context = '', array $tags = [], $syntax = '')
     {
         global $core;
 
@@ -212,13 +212,13 @@ class yashBehaviors
     {
         global $core;
 
-        $wiki2xhtml->registerFunction('macro:yash', array('yashBehaviors', 'transform'));
+        $wiki2xhtml->registerFunction('macro:yash', ['yashBehaviors', 'transform']);
 
         $core->blog->settings->addNameSpace('yash');
         if ((boolean) $core->blog->settings->yash->yash_syntaxehl) {
             // Add syntaxehl compatibility macros
             foreach (self::$syntaxehl_brushes as $brush => $alias) {
-                $wiki2xhtml->registerFunction('macro:[' . $brush . ']', array('yashBehaviors', 'transformSyntaxehl'));
+                $wiki2xhtml->registerFunction('macro:[' . $brush . ']', ['yashBehaviors', 'transformSyntaxehl']);
             }
         }
     }
