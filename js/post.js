@@ -41,17 +41,17 @@ jsToolBar.prototype.elements.yash.fn.markdown = function() {
 };
 
 jsToolBar.prototype.elements.yash.fncall.wiki = function() {
-  var stag = '\n///yash ' + this.elements.yash.data.syntax + '\n';
-  var etag = '\n///\n';
+  const stag = `\n///yash ${this.elements.yash.data.syntax}\n`;
+  const etag = '\n///\n';
   this.encloseSelection(stag, etag);
 };
 jsToolBar.prototype.elements.yash.fncall.xhtml = function() {
-  var stag = '<pre class="brush: ' + this.elements.yash.data.syntax + '">\n';
-  var etag = '\n</pre>\n';
+  const stag = `<pre class="brush: ${this.elements.yash.data.syntax}">\n`;
+  const etag = '\n</pre>\n';
   this.encloseSelection(stag, etag);
 };
 jsToolBar.prototype.elements.yash.fncall.markdown = function() {
-  var stag = '<pre class="brush: ' + this.elements.yash.data.syntax + '">\n';
-  var etag = '\n</pre>\n';
+  const stag = `<pre class="brush: ${this.elements.yash.data.syntax}">\n`;
+  const etag = '\n</pre>\n';
   this.encloseSelection(stag, etag);
 };

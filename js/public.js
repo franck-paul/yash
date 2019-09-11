@@ -2,9 +2,9 @@
 'use strict';
 
 function shGetPath() {
-  var args = arguments,
-    result = [];
-  for (var i = 0; i < args.length; i++)
+  const args = shGetPath.arguments;
+  let result = [];
+  for (let i = 0; i < args.length; i++)
     result.push(args[i].replace('@', yash_path));
   return result;
 }
