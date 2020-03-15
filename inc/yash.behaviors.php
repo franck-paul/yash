@@ -203,7 +203,7 @@ class yashBehaviors
 
         return
         dcPage::jsLoad(urldecode(dcPage::getPF('yash/js/post.js')), $core->getVersion('yash')) .
-        '<script type="text/javascript">' . "\n" .
+        '<script>' . "\n" .
         dcPage::jsVar('jsToolBar.prototype.elements.yash.title', __('Highlighted Code')) .
             "</script>\n";
     }

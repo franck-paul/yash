@@ -2,12 +2,12 @@
 'use strict';
 
 $(function() {
-  $('#yash-cancel').click(function() {
+  $('#yash-cancel').on('click', function() {
     window.close();
     return false;
   });
 
-  $('#yash-ok').click(function() {
+  $('#yash-ok').on('click', function() {
     sendClose();
     window.close();
     return false;
