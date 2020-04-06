@@ -1,11 +1,13 @@
-/*global SyntaxHighlighter, yash_path, yash_gutter */
+/*global SyntaxHighlighter, getData */
 'use strict';
+
+var yash_config = getData('yash_config');
 
 function shGetPath() {
   const args = arguments;
   let result = [];
   for (let i = 0; i < args.length; i++)
-    result.push(args[i].replace('@', yash_path));
+    result.push(args[i].replace('@', yash_config.path));
   return result;
 }
 SyntaxHighlighter.autoloader.apply(null, shGetPath(
@@ -37,5 +39,5 @@ SyntaxHighlighter.autoloader.apply(null, shGetPath(
   'yaml yaml              @shBrushYaml.js'
 ));
 SyntaxHighlighter.defaults.toolbar = false;
-SyntaxHighlighter.defaults.gutter = (yash_gutter ? true : false);
+SyntaxHighlighter.defaults.gutter = yash_config.gutter;
 SyntaxHighlighter.all();

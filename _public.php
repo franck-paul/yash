@@ -58,8 +58,10 @@ class dcYASH
             echo
             dcUtils::jsLoad($core->blog->getPF('yash/syntaxhighlighter/js/shCore.js')) .
             dcUtils::jsLoad($core->blog->getPF('yash/syntaxhighlighter/js/shAutoloader.js')) .
-            dcUtils::jsVar('yash_path', $core->blog->getPF('yash/syntaxhighlighter/js/')) .
-            dcUtils::jsVar('yash_gutter', ($core->blog->settings->yash->yash_hide_gutter ? 0 : 1)) .
+            dcUtils::jsJson('yash_config', [
+                'path' => $core->blog->getPF('yash/syntaxhighlighter/js/'),
+                'gutter' => $core->blog->settings->yash->yash_hide_gutter ? false : true
+            ]) .
             dcUtils::jsLoad($core->blog->getPF('yash/js/public.js'));
         }
     }

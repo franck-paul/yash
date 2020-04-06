@@ -202,10 +202,8 @@ class yashBehaviors
         }
 
         return
-        dcPage::jsLoad(urldecode(dcPage::getPF('yash/js/post.js')), $core->getVersion('yash')) .
-        '<script>' . "\n" .
-        dcPage::jsVar('jsToolBar.prototype.elements.yash.title', __('Highlighted Code')) .
-            "</script>\n";
+        dcPage::jsJson('dc_editor_yash', ['title' => __('Highlighted Code')]) .
+        dcPage::jsLoad(urldecode(dcPage::getPF('yash/js/post.js')), $core->getVersion('yash'));
     }
 
     public static function coreInitWikiPost($wiki2xhtml)

@@ -13,7 +13,7 @@ jsToolBar.prototype.elements.yashSpace = {
 
 jsToolBar.prototype.elements.yash = {
   type: 'button',
-  title: 'Highlighted Code',
+  title: getData('dc_editor_yash').title || 'Highlighted Code',
   context: 'post',
   icon: 'index.php?pf=yash/icon.png',
   fn: {},

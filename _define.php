@@ -18,7 +18,7 @@ $this->registerModule(
     "YASH",                           // Name
     "Yet Another Syntax Highlighter", // Description
     "Pep and contributors",           // Author
-    '1.8',                            // Version
+    '1.9',                            // Version
     [
         'requires'    => [['core', '2.16']],                        // Dependencies
         'permissions' => 'contentadmin',                            // Permissions
