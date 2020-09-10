@@ -18,9 +18,9 @@ $this->registerModule(
     "YASH",                           // Name
     "Yet Another Syntax Highlighter", // Description
     "Pep and contributors",           // Author
-    '1.9',                            // Version
+    '1.10',                           // Version
     [
-        'requires'    => [['core', '2.16']],                        // Dependencies
+        'requires'    => [['core', '2.17']],                        // Dependencies
         'permissions' => 'contentadmin',                            // Permissions
         'priority'    => 1001,                                      // Must be higher than dcLegacyEditor priority (ie 1000)
         'type'        => 'plugin',                                  // Type

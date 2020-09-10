@@ -1,7 +1,7 @@
-/*global SyntaxHighlighter, getData */
+/*global SyntaxHighlighter, dotclear */
 'use strict';
 
-var yash_config = getData('yash_config');
+var yash_config = dotclear.getData('yash_config');
 
 function shGetPath() {
   const args = arguments;

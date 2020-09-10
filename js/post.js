@@ -1,4 +1,4 @@
-/*global jsToolBar */
+/*global jsToolBar, getData */
 'use strict';
 
 jsToolBar.prototype.elements.yashSpace = {
