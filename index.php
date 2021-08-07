@@ -11,8 +11,9 @@
  * @copyright Pep
  * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
-
-if (!defined('DC_CONTEXT_ADMIN')) {exit;}
+if (!defined('DC_CONTEXT_ADMIN')) {
+    exit;
+}
 
 // Getting current parameters if any (get global parameters if not)
 $core->blog->settings->addNamespace('yash');
@@ -71,13 +72,13 @@ if (!empty($_REQUEST['popup'])) {
         '</form>' .
         '</body>' .
         '</html>';
+
     return;
 }
 
 // Saving new configuration
 if (!empty($_POST['saveconfig'])) {
-    try
-    {
+    try {
         $core->blog->settings->addNameSpace('yash');
         $active      = (empty($_POST['active'])) ? false : true;
         $theme       = (empty($_POST['theme'])) ? 'Default' : $_POST['theme'];

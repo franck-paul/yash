@@ -11,8 +11,9 @@
  * @copyright Pep
  * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
-
-if (!defined('DC_CONTEXT_ADMIN')) {return;}
+if (!defined('DC_CONTEXT_ADMIN')) {
+    return;
+}
 
 $new_version = $core->plugins->moduleInfo('yash', 'version');
 $old_version = $core->getVersion('YASH');
@@ -21,8 +22,7 @@ if (version_compare($old_version, $new_version, '>=')) {
     return;
 }
 
-try
-{
+try {
     $core->blog->settings->addNamespace('yash');
     $core->blog->settings->yash->put('yash_active', false, 'boolean', '', false, true);
     $core->blog->settings->yash->put('yash_theme', 'Default', 'string', '', false, true);
@@ -36,4 +36,5 @@ try
 } catch (Exception $e) {
     $core->error->add($e->getMessage());
 }
+
 return false;

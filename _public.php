@@ -11,8 +11,9 @@
  * @copyright Pep
  * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
-
-if (!defined('DC_RC_PATH')) {return;}
+if (!defined('DC_RC_PATH')) {
+    return;
+}
 
 $core->addBehavior('publicHeadContent', ['dcYASH', 'publicHeadContent']);
 $core->addBehavior('publicFooterContent', ['dcYASH', 'publicFooterContent']);
@@ -30,9 +31,8 @@ class dcYASH
                 if (strpos('/', $custom_css) === 0) {
                     $css = $custom_css;
                 } else {
-                    $css =
-                    $core->blog->settings->system->themes_url . "/" .
-                    $core->blog->settings->system->theme . "/" .
+                    $css = $core->blog->settings->system->themes_url . '/' .
+                    $core->blog->settings->system->theme . '/' .
                         $custom_css;
                 }
             } else {
@@ -59,7 +59,7 @@ class dcYASH
             dcUtils::jsLoad($core->blog->getPF('yash/syntaxhighlighter/js/shCore.js')) .
             dcUtils::jsLoad($core->blog->getPF('yash/syntaxhighlighter/js/shAutoloader.js')) .
             dcUtils::jsJson('yash_config', [
-                'path' => $core->blog->getPF('yash/syntaxhighlighter/js/'),
+                'path'   => $core->blog->getPF('yash/syntaxhighlighter/js/'),
                 'gutter' => $core->blog->settings->yash->yash_hide_gutter ? false : true
             ]) .
             dcUtils::jsLoad($core->blog->getPF('yash/js/public.js'));

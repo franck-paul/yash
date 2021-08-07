@@ -1,13 +1,13 @@
 /*global $ */
 'use strict';
 
-$(function() {
-  $('#yash-cancel').on('click', function() {
+$(function () {
+  $('#yash-cancel').on('click', function () {
     window.close();
     return false;
   });
 
-  $('#yash-ok').on('click', function() {
+  $('#yash-ok').on('click', function () {
     sendClose();
     window.close();
     return false;

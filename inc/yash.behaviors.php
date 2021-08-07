@@ -11,7 +11,6 @@
  * @copyright Pep
  * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
-
 class yashBehaviors
 {
     private static $syntaxehl_brushes = [
@@ -226,6 +225,7 @@ class yashBehaviors
         $text      = trim($text);
         $real_args = explode(' ', $args);
         $class     = empty($real_args[1]) ? 'plain' : $real_args[1];
+
         return '<pre class="brush: ' . $class . '">' . htmlspecialchars($text) . '</pre>';
     }
 
@@ -236,6 +236,7 @@ class yashBehaviors
         $class     = array_key_exists($real_args, self::$syntaxehl_brushes) && self::$syntaxehl_brushes[$real_args] != ''
         ? self::$syntaxehl_brushes[$real_args]
         : 'plain';
+
         return '<pre class="brush: ' . $class . '">' . htmlspecialchars($text) . '</pre>';
     }
 }

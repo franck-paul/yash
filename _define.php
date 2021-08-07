@@ -11,16 +11,17 @@
  * @copyright Pep
  * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
-
-if (!defined('DC_RC_PATH')) {return;}
+if (!defined('DC_RC_PATH')) {
+    return;
+}
 
 $this->registerModule(
-    "YASH",                           // Name
-    "Yet Another Syntax Highlighter", // Description
-    "Pep and contributors",           // Author
-    '1.10',                           // Version
+    'YASH',                           // Name
+    'Yet Another Syntax Highlighter', // Description
+    'Pep and contributors',           // Author
+    '1.11',                           // Version
     [
-        'requires'    => [['core', '2.17']],                        // Dependencies
+        'requires'    => [['core', '2.19']],                        // Dependencies
         'permissions' => 'contentadmin',                            // Permissions
         'priority'    => 1001,                                      // Must be higher than dcLegacyEditor priority (ie 1000)
         'type'        => 'plugin',                                  // Type
