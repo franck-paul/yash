@@ -21,14 +21,16 @@ $this->registerModule(
     'Pep and contributors',           // Author
     '1.11',                           // Version
     [
-        'requires'    => [['core', '2.19']],                        // Dependencies
-        'permissions' => 'contentadmin',                            // Permissions
-        'priority'    => 1001,                                      // Must be higher than dcLegacyEditor priority (ie 1000)
-        'type'        => 'plugin',                                  // Type
-        'details'     => 'https://open-time.net/docs/plugins/yash', // Details
-        'support'     => 'https://github.com/franck-paul/yash',     // Support URL
+        'requires'    => [['core', '2.19']],   // Dependencies
+        'permissions' => 'contentadmin',       // Permissions
+        'priority'    => 1001,                 // Must be higher than dcLegacyEditor priority (ie 1000)
+        'type'        => 'plugin',             // Type
         'settings'    => [
             'self' => ''
-        ]
+        ],
+
+        'details'    => 'https://open-time.net/?q=yash',       // Details URL
+        'support'    => 'https://github.com/franck-paul/yash', // Support URL
+        'repository' => 'https://raw.githubusercontent.com/franck-paul/yash/main/dcstore.xml'
     ]
 );
