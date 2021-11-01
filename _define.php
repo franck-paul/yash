@@ -31,6 +31,6 @@ $this->registerModule(
 
         'details'    => 'https://open-time.net/?q=yash',       // Details URL
         'support'    => 'https://github.com/franck-paul/yash', // Support URL
-        'repository' => 'https://raw.githubusercontent.com/franck-paul/yash/main/dcstore.xml'
+        'repository' => 'https://raw.githubusercontent.com/franck-paul/yash/master/dcstore.xml'
     ]
 );
