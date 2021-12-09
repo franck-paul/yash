@@ -1,8 +1,8 @@
 <modules xmlns:da="http://dotaddict.org/da/">
   <module id="yash">
-    <name>Yet Another Syntax Highlighter</name>
+    <name>YASH</name>
     <version>1.11</version>
-    <author>Yet Another Syntax Highlighter</author>
+    <author>Pep and contributors</author>
     <desc>Yet Another Syntax Highlighter</desc>
     <file>https://github.com/franck-paul/yash/releases/download/1.11/plugin-yash-1.11.zip</file>
     <da:dcmin>2.19</da:dcmin>
