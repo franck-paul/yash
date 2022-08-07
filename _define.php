@@ -19,7 +19,7 @@ $this->registerModule(
     'YASH',                           // Name
     'Yet Another Syntax Highlighter', // Description
     'Pep and contributors',           // Author
-    '1.12',                           // Version
+    '1.12.1',                         // Version
     [
         'requires'    => [['core', '2.23']],   // Dependencies
         'permissions' => 'contentadmin',       // Permissions

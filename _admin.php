@@ -23,7 +23,7 @@ $_menu['Blog']->addItem(
     'plugin.php?p=yash',
     urldecode(dcPage::getPF('yash/icon.svg')),
     preg_match('/plugin.php\?p=yash(&.*)?$/', $_SERVER['REQUEST_URI']),
-    $core->auth->check('contentadmin', $core->blog->id)
+    dcCore::app()->auth->check('contentadmin', dcCore::app()->blog->id)
 );
 
-$core->addBehavior('adminPostEditor', ['yashBehaviors', 'adminPostEditor']);
+dcCore::app()->addBehavior('adminPostEditor', ['yashBehaviors', 'adminPostEditor']);
