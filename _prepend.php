@@ -15,6 +15,6 @@ if (!defined('DC_RC_PATH')) {
     return;
 }
 
-$__autoload['yashBehaviors'] = dirname(__FILE__) . '/inc/yash.behaviors.php';
+$__autoload['yashBehaviors'] = __DIR__ . '/inc/yash.behaviors.php';
 
-$core->addBehavior('coreInitWikiPost', ['yashBehaviors', 'coreInitWikiPost']);
+dcCore::app()->addBehavior('coreInitWikiPost', ['yashBehaviors', 'coreInitWikiPost']);

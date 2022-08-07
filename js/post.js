@@ -15,19 +15,19 @@ jsToolBar.prototype.elements.yash = {
   type: 'button',
   title: dotclear.getData('dc_editor_yash').title || 'Highlighted Code',
   context: 'post',
-  icon: 'index.php?pf=yash/icon.png',
+  icon: 'index.php?pf=yash/icon.svg',
   fn: {},
   fncall: {},
   open_url: 'plugin.php?p=yash&popup=1',
   data: {},
-  popup: function () {
+  popup() {
     window.the_toolbar = this;
     this.elements.yash.data = {};
 
     window.open(
       this.elements.yash.open_url,
       'dc_popup',
-      'alwaysRaised=yes,dependent=yes,toolbar=yes,height=240,width=480,' + 'menubar=no,resizable=yes,scrollbars=yes,status=no'
+      'alwaysRaised=yes,dependent=yes,toolbar=yes,height=240,width=480,menubar=no,resizable=yes,scrollbars=yes,status=no',
     );
   },
 };

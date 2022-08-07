@@ -16,12 +16,12 @@ if (!defined('DC_CONTEXT_ADMIN')) {
 }
 
 // Getting current parameters if any (get global parameters if not)
-$core->blog->settings->addNamespace('yash');
-$active      = (boolean) $core->blog->settings->yash->yash_active;
-$theme       = (string) $core->blog->settings->yash->yash_theme;
-$custom_css  = (string) $core->blog->settings->yash->yash_custom_css;
-$hide_gutter = (boolean) $core->blog->settings->yash->yash_hide_gutter;
-$syntaxehl   = (boolean) $core->blog->settings->yash->yash_syntaxehl;
+dcCore::app()->blog->settings->addNamespace('yash');
+$active      = (bool) dcCore::app()->blog->settings->yash->yash_active;
+$theme       = (string) dcCore::app()->blog->settings->yash->yash_theme;
+$custom_css  = (string) dcCore::app()->blog->settings->yash->yash_custom_css;
+$hide_gutter = (bool) dcCore::app()->blog->settings->yash->yash_hide_gutter;
+$syntaxehl   = (bool) dcCore::app()->blog->settings->yash->yash_syntaxehl;
 
 if (!empty($_REQUEST['popup'])) {
     $yash_brushes = [
@@ -53,14 +53,14 @@ if (!empty($_REQUEST['popup'])) {
         'ts'          => __('TypeScript'),
         'vb'          => __('Visual Basic'),
         'xml'         => __('XML/XSLT/XHTML/HTML'),
-        'yaml'        => __('Yaml')
+        'yaml'        => __('Yaml'),
     ];
 
     echo
     '<html>' .
     '<head>' .
     '<title>' . __('YASH - Syntax Selector') . '</title>' .
-    dcPage::jsLoad(urldecode(dcPage::getPF('yash/js/popup.js')), $core->getVersion('yash')) .
+    dcPage::jsModuleLoad('yash/js/popup.js', dcCore::app()->getVersion('yash')) .
     '</head>' .
     '<body>' .
     '<h2>' . __('YASH - Syntax Selector') . '</h2>' .
@@ -79,22 +79,22 @@ if (!empty($_REQUEST['popup'])) {
 // Saving new configuration
 if (!empty($_POST['saveconfig'])) {
     try {
-        $core->blog->settings->addNameSpace('yash');
+        dcCore::app()->blog->settings->addNameSpace('yash');
         $active      = (empty($_POST['active'])) ? false : true;
         $theme       = (empty($_POST['theme'])) ? 'Default' : $_POST['theme'];
         $custom_css  = (empty($_POST['custom_css'])) ? '' : html::sanitizeURL($_POST['custom_css']);
         $hide_gutter = (empty($_POST['hide_gutter'])) ? false : true;
         $syntaxehl   = (empty($_POST['syntaxehl'])) ? false : true;
-        $core->blog->settings->yash->put('yash_active', $active, 'boolean');
-        $core->blog->settings->yash->put('yash_theme', $theme, 'string');
-        $core->blog->settings->yash->put('yash_custom_css', $custom_css, 'string');
-        $core->blog->settings->yash->put('yash_hide_gutter', $hide_gutter, 'boolean');
-        $core->blog->settings->yash->put('yash_syntaxehl', $syntaxehl, 'boolean');
-        $core->blog->triggerBlog();
+        dcCore::app()->blog->settings->yash->put('yash_active', $active, 'boolean');
+        dcCore::app()->blog->settings->yash->put('yash_theme', $theme, 'string');
+        dcCore::app()->blog->settings->yash->put('yash_custom_css', $custom_css, 'string');
+        dcCore::app()->blog->settings->yash->put('yash_hide_gutter', $hide_gutter, 'boolean');
+        dcCore::app()->blog->settings->yash->put('yash_syntaxehl', $syntaxehl, 'boolean');
+        dcCore::app()->blog->triggerBlog();
         dcPage::addSuccessNotice(__('Configuration successfully updated.'));
         http::redirect($p_url);
     } catch (Exception $e) {
-        $core->error->add($e->getMessage());
+        dcCore::app()->error->add($e->getMessage());
     }
 }
 ?>
@@ -107,9 +107,10 @@ if (!empty($_POST['saveconfig'])) {
 <?php
 echo dcPage::breadcrumb(
     [
-        html::escapeHTML($core->blog->name) => '',
-        __('YASH')                          => ''
-    ]);
+        html::escapeHTML(dcCore::app()->blog->name) => '',
+        __('YASH')                                  => '',
+    ]
+);
 echo dcPage::notices();
 
 $combo_theme = [
@@ -124,7 +125,7 @@ $combo_theme = [
     __('RDark')           => 'RDark',
     __('Solarized Dark')  => 'SolarizedDark',
     __('Solarized Light') => 'SolarizedLight',
-    __('Tomorrow Night')  => 'TomorrowNight'
+    __('Tomorrow Night')  => 'TomorrowNight',
 ];
 ?>
 
@@ -160,7 +161,7 @@ $combo_theme = [
       <?php echo __('Will be applied on future edition of posts containing SyntaxeHL macros (///[language]…///).'); ?><br /><?php echo __('All SyntaxeHL languages is not supported by Yash (see documentation).'); ?>
     </p>
     <p><input type="hidden" name="p" value="yash" />
-      <?php echo $core->formNonce(); ?>
+      <?php echo dcCore::app()->formNonce(); ?>
       <input type="submit" name="saveconfig" value="<?php echo __('Save configuration'); ?>" />
     </p>
   </form>

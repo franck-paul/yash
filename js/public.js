@@ -5,7 +5,7 @@ dotclear.yash_config = dotclear.getData('yash_config');
 
 function shGetPath() {
   const args = arguments;
-  let result = [];
+  const result = [];
   for (let i = 0; i < args.length; i++) result.push(args[i].replace('@', dotclear.yash_config.path));
   return result;
 }

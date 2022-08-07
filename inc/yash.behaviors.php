@@ -189,30 +189,26 @@ class yashBehaviors
         'xml'           => 'xml',
         'xorg_conf'     => '',
         'xpp'           => '',
-        'z80'           => ''
+        'z80'           => '',
     ];
 
     public static function adminPostEditor($editor = '', $context = '', array $tags = [], $syntax = '')
     {
-        global $core;
-
         if ($editor != 'dcLegacyEditor') {
             return;
         }
 
         return
         dcPage::jsJson('dc_editor_yash', ['title' => __('Highlighted Code')]) .
-        dcPage::jsLoad(urldecode(dcPage::getPF('yash/js/post.js')), $core->getVersion('yash'));
+        dcPage::jsModuleLoad('yash/js/post.js', dcCore::app()->getVersion('yash'));
     }
 
     public static function coreInitWikiPost($wiki2xhtml)
     {
-        global $core;
-
         $wiki2xhtml->registerFunction('macro:yash', ['yashBehaviors', 'transform']);
 
-        $core->blog->settings->addNameSpace('yash');
-        if ((boolean) $core->blog->settings->yash->yash_syntaxehl) {
+        dcCore::app()->blog->settings->addNameSpace('yash');
+        if ((bool) dcCore::app()->blog->settings->yash->yash_syntaxehl) {
             // Add syntaxehl compatibility macros
             foreach (self::$syntaxehl_brushes as $brush => $alias) {
                 $wiki2xhtml->registerFunction('macro:[' . $brush . ']', ['yashBehaviors', 'transformSyntaxehl']);
@@ -222,7 +218,7 @@ class yashBehaviors
 
     public static function transform($text, $args)
     {
-        $text      = trim($text);
+        $text      = trim((string) $text);
         $real_args = explode(' ', $args);
         $class     = empty($real_args[1]) ? 'plain' : $real_args[1];
 
@@ -231,8 +227,8 @@ class yashBehaviors
 
     public static function transformSyntaxehl($text, $args)
     {
-        $text      = trim($text);
-        $real_args = preg_replace('/^(\[(.*)\]$)/', '$2', $args);
+        $text      = trim((string) $text);
+        $real_args = preg_replace('/^(\[(.*)\]$)/', '$2', (string) $args);
         $class     = array_key_exists($real_args, self::$syntaxehl_brushes) && self::$syntaxehl_brushes[$real_args] != ''
         ? self::$syntaxehl_brushes[$real_args]
         : 'plain';

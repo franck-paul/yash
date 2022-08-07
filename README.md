@@ -3,10 +3,6 @@ Yash plugin for Dotclear 2
 
 Packaging [Syntax Highlighter script](http://alexgorbatchev.com/SyntaxHighlighter) from Alex Gorbatchev
 
-See [full documentation](https://open-time.net/docs/plugins/yash/)
-
-(run ```mkdocs build``` in mkdocs folder to build the static documentation mkdocs/site folder)
-
 Available syntaxes
 ------------------
 
