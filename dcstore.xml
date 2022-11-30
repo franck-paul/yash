@@ -1,11 +1,11 @@
 <modules xmlns:da="http://dotaddict.org/da/">
   <module id="yash">
     <name>YASH</name>
-    <version>1.12.1</version>
+    <version>2.0</version>
     <author>Pep and contributors</author>
     <desc>Yet Another Syntax Highlighter</desc>
-    <file>https://github.com/franck-paul/yash/releases/download/1.12.1/plugin-yash-1.12.1.zip</file>
-    <da:dcmin>2.23</da:dcmin>
+    <file>https://github.com/franck-paul/yash/releases/download/2.0/plugin-yash-2.0.zip</file>
+    <da:dcmin>2.24</da:dcmin>
     <da:details>https://open-time.net/?q=yash</da:details>
     <da:support>https://github.com/franck-paul/yash</da:support>
   </module>
