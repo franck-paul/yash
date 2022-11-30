@@ -16,21 +16,23 @@ if (!defined('DC_RC_PATH')) {
 }
 
 $this->registerModule(
-    'YASH',                           // Name
-    'Yet Another Syntax Highlighter', // Description
-    'Pep and contributors',           // Author
-    '1.12.1',                         // Version
+    'YASH',
+    'Yet Another Syntax Highlighter',
+    'Pep and contributors',
+    '2.0',
     [
-        'requires'    => [['core', '2.23']],   // Dependencies
-        'permissions' => 'contentadmin',       // Permissions
-        'priority'    => 1001,                 // Must be higher than dcLegacyEditor priority (ie 1000)
-        'type'        => 'plugin',             // Type
-        'settings'    => [
+        'requires'    => [['core', '2.24']],
+        'permissions' => dcCore::app()->auth->makePermissions([
+            dcAuth::PERMISSION_CONTENT_ADMIN,
+        ]),
+        'priority' => 1001,
+        'type'     => 'plugin',
+        'settings' => [
             'self' => '',
         ],
 
-        'details'    => 'https://open-time.net/?q=yash',       // Details URL
-        'support'    => 'https://github.com/franck-paul/yash', // Support URL
+        'details'    => 'https://open-time.net/?q=yash',
+        'support'    => 'https://github.com/franck-paul/yash',
         'repository' => 'https://raw.githubusercontent.com/franck-paul/yash/master/dcstore.xml',
     ]
 );

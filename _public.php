@@ -15,9 +15,6 @@ if (!defined('DC_RC_PATH')) {
     return;
 }
 
-dcCore::app()->addBehavior('publicHeadContent', ['dcYASH', 'publicHeadContent']);
-dcCore::app()->addBehavior('publicFooterContent', ['dcYASH', 'publicFooterContent']);
-
 class dcYASH
 {
     public static function publicHeadContent()
@@ -62,3 +59,6 @@ class dcYASH
         }
     }
 }
+
+dcCore::app()->addBehavior('publicHeadContent', [dcYASH::class, 'publicHeadContent']);
+dcCore::app()->addBehavior('publicFooterContent', [dcYASH::class, 'publicFooterContent']);

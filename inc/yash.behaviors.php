@@ -192,10 +192,10 @@ class yashBehaviors
         'z80'           => '',
     ];
 
-    public static function adminPostEditor($editor = '', $context = '', array $tags = [], $syntax = '')
+    public static function adminPostEditor($editor = ''): string
     {
         if ($editor != 'dcLegacyEditor') {
-            return;
+            return '';
         }
 
         return

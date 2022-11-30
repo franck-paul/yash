@@ -15,6 +15,6 @@ if (!defined('DC_RC_PATH')) {
     return;
 }
 
-$__autoload['yashBehaviors'] = __DIR__ . '/inc/yash.behaviors.php';
+Clearbricks::lib()->autoload(['yashBehaviors' => __DIR__ . '/inc/yash.behaviors.php']);
 
-dcCore::app()->addBehavior('coreInitWikiPost', ['yashBehaviors', 'coreInitWikiPost']);
+dcCore::app()->addBehavior('coreInitWikiPost', [yashBehaviors::class, 'coreInitWikiPost']);

@@ -6,7 +6,7 @@ dotclear.yash_config = dotclear.getData('yash_config');
 function shGetPath() {
   const args = arguments;
   const result = [];
-  for (let i = 0; i < args.length; i++) result.push(args[i].replace('@', dotclear.yash_config.path));
+  for (const element of args) result.push(element.replace('@', dotclear.yash_config.path));
   return result;
 }
 SyntaxHighlighter.autoloader.apply(
