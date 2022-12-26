@@ -20,7 +20,6 @@ if (!dcCore::app()->newVersion(basename(__DIR__), dcCore::app()->plugins->module
 }
 
 try {
-    dcCore::app()->blog->settings->addNamespace('yash');
     dcCore::app()->blog->settings->yash->put('yash_active', false, 'boolean', '', false, true);
     dcCore::app()->blog->settings->yash->put('yash_theme', 'Default', 'string', '', false, true);
     dcCore::app()->blog->settings->yash->put('yash_custom_css', '', 'string', '', false, true);

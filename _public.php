@@ -19,7 +19,6 @@ class dcYASH
 {
     public static function publicHeadContent()
     {
-        dcCore::app()->blog->settings->addNamespace('yash');
         if (dcCore::app()->blog->settings->yash->yash_active) {
             $custom_css = dcCore::app()->blog->settings->yash->yash_custom_css;
             if (!empty($custom_css)) {
@@ -46,7 +45,6 @@ class dcYASH
 
     public static function publicFooterContent()
     {
-        dcCore::app()->blog->settings->addNamespace('yash');
         if (dcCore::app()->blog->settings->yash->yash_active) {
             echo
             dcUtils::jsModuleLoad('yash/syntaxhighlighter/js/shCore.js') .
@@ -60,5 +58,7 @@ class dcYASH
     }
 }
 
-dcCore::app()->addBehavior('publicHeadContent', [dcYASH::class, 'publicHeadContent']);
-dcCore::app()->addBehavior('publicFooterContent', [dcYASH::class, 'publicFooterContent']);
+dcCore::app()->addBehaviors([
+    'publicHeadContent'   => [dcYASH::class, 'publicHeadContent'],
+    'publicFooterContent' => [dcYASH::class, 'publicFooterContent'],
+]);

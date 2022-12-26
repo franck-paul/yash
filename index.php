@@ -16,7 +16,6 @@ if (!defined('DC_CONTEXT_ADMIN')) {
 }
 
 // Getting current parameters if any (get global parameters if not)
-dcCore::app()->blog->settings->addNamespace('yash');
 $active      = (bool) dcCore::app()->blog->settings->yash->yash_active;
 $theme       = (string) dcCore::app()->blog->settings->yash->yash_theme;
 $custom_css  = (string) dcCore::app()->blog->settings->yash->yash_custom_css;
@@ -79,7 +78,6 @@ if (!empty($_REQUEST['popup'])) {
 // Saving new configuration
 if (!empty($_POST['saveconfig'])) {
     try {
-        dcCore::app()->blog->settings->addNameSpace('yash');
         $active      = (empty($_POST['active'])) ? false : true;
         $theme       = (empty($_POST['theme'])) ? 'Default' : $_POST['theme'];
         $custom_css  = (empty($_POST['custom_css'])) ? '' : html::sanitizeURL($_POST['custom_css']);

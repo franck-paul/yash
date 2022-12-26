@@ -207,7 +207,6 @@ class yashBehaviors
     {
         $wiki2xhtml->registerFunction('macro:yash', ['yashBehaviors', 'transform']);
 
-        dcCore::app()->blog->settings->addNameSpace('yash');
         if ((bool) dcCore::app()->blog->settings->yash->yash_syntaxehl) {
             // Add syntaxehl compatibility macros
             foreach (self::$syntaxehl_brushes as $brush => $alias) {
