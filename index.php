@@ -11,6 +11,10 @@
  * @copyright Pep
  * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
+
+use Dotclear\Helper\Html\Html;
+use Dotclear\Helper\Network\Http;
+
 if (!defined('DC_CONTEXT_ADMIN')) {
     exit;
 }
@@ -80,7 +84,7 @@ if (!empty($_POST['saveconfig'])) {
     try {
         $active      = (empty($_POST['active'])) ? false : true;
         $theme       = (empty($_POST['theme'])) ? 'Default' : $_POST['theme'];
-        $custom_css  = (empty($_POST['custom_css'])) ? '' : html::sanitizeURL($_POST['custom_css']);
+        $custom_css  = (empty($_POST['custom_css'])) ? '' : Html::sanitizeURL($_POST['custom_css']);
         $hide_gutter = (empty($_POST['hide_gutter'])) ? false : true;
         $syntaxehl   = (empty($_POST['syntaxehl'])) ? false : true;
         dcCore::app()->blog->settings->yash->put('yash_active', $active, 'boolean');
@@ -90,7 +94,7 @@ if (!empty($_POST['saveconfig'])) {
         dcCore::app()->blog->settings->yash->put('yash_syntaxehl', $syntaxehl, 'boolean');
         dcCore::app()->blog->triggerBlog();
         dcPage::addSuccessNotice(__('Configuration successfully updated.'));
-        http::redirect(dcCore::app()->admin->getPageURL());
+        Http::redirect(dcCore::app()->admin->getPageURL());
     } catch (Exception $e) {
         dcCore::app()->error->add($e->getMessage());
     }
@@ -105,7 +109,7 @@ if (!empty($_POST['saveconfig'])) {
 <?php
 echo dcPage::breadcrumb(
     [
-        html::escapeHTML(dcCore::app()->blog->name) => '',
+        Html::escapeHTML(dcCore::app()->blog->name) => '',
         __('YASH')                                  => '',
     ]
 );
@@ -128,7 +132,7 @@ $combo_theme = [
 ?>
 
 <div id="yash_options">
-  <form method="post" action="<?php http::getSelfURI();?>">
+  <form method="post" action="<?php Http::getSelfURI();?>">
     <p>
       <?php echo form::checkbox('active', 1, $active); ?>
       <label class="classic" for="active">&nbsp;<?php echo __('Enable YASH'); ?></label>

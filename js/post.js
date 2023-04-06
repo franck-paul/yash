@@ -16,6 +16,8 @@ jsToolBar.prototype.elements.yash = {
   title: dotclear.getData('dc_editor_yash').title || 'Highlighted Code',
   context: 'post',
   icon: 'index.php?pf=yash/icon.svg',
+  shortkey: 'KeyY',
+  shortkey_name: 'Y',
   fn: {},
   fncall: {},
   open_url: 'plugin.php?p=yash&popup=1',

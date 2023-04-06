@@ -13,7 +13,7 @@
  */
 class yashBehaviors
 {
-    private static $syntaxehl_brushes = [
+    private static array $syntaxehl_brushes = [
         '4cs'           => '',
         'abap'          => '',
         'actionscript'  => 'as3',
@@ -203,14 +203,14 @@ class yashBehaviors
         dcPage::jsModuleLoad('yash/js/post.js', dcCore::app()->getVersion('yash'));
     }
 
-    public static function coreInitWikiPost($wiki2xhtml)
+    public static function coreInitWikiPost($wiki)
     {
-        $wiki2xhtml->registerFunction('macro:yash', ['yashBehaviors', 'transform']);
+        $wiki->registerFunction('macro:yash', ['yashBehaviors', 'transform']);
 
         if ((bool) dcCore::app()->blog->settings->yash->yash_syntaxehl) {
             // Add syntaxehl compatibility macros
             foreach (self::$syntaxehl_brushes as $brush => $alias) {
-                $wiki2xhtml->registerFunction('macro:[' . $brush . ']', ['yashBehaviors', 'transformSyntaxehl']);
+                $wiki->registerFunction('macro:[' . $brush . ']', ['yashBehaviors', 'transformSyntaxehl']);
             }
         }
     }

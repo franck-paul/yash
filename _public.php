@@ -11,10 +11,6 @@
  * @copyright Pep
  * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
-if (!defined('DC_RC_PATH')) {
-    return;
-}
-
 class dcYASH
 {
     public static function publicHeadContent()
@@ -22,7 +18,7 @@ class dcYASH
         if (dcCore::app()->blog->settings->yash->yash_active) {
             $custom_css = dcCore::app()->blog->settings->yash->yash_custom_css;
             if (!empty($custom_css)) {
-                if (strpos('/', $custom_css) === 0) {
+                if (strpos('/', (string) $custom_css) === 0) {
                     $css = $custom_css;
                 } else {
                     $css = dcCore::app()->blog->settings->system->themes_url . '/' .
