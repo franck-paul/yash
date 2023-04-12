@@ -16,239 +16,179 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../git-plugins/yash/_admin.php:19 ../git-plugins/yash/_admin.php:22
-#: ../git-plugins/yash/index.php:105 ../git-plugins/yash/index.php:113
 msgid "YASH"
 msgstr ""
 
-#: ../git-plugins/yash/_admin.php:19
 msgid "Yet Another Syntax Highlighter"
 msgstr ""
 
-#: ../git-plugins/yash/inc/yash.behaviors.php:202
 msgid "Highlighted Code"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:31
 msgid "Plain Text"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:32
 msgid "AppleScript"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:33
 msgid "ActionScript3"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:34
 msgid "Bash/shell"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:35
 msgid "ColdFusion"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:36
 msgid "C#"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:37
 msgid "C/C++"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:38
 msgid "CSS"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:39
 msgid "Delphi"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:40
 msgid "Diff/Patch"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:41
 msgid "Erlang"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:42
 msgid "Groovy"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:43
 msgid "Haxe"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:44
 msgid "Javascript/JSON"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:45
 msgid "Java"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:46
 msgid "JavaFX"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:47
 msgid "Perl"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:48
 msgid "PHP"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:49
 msgid "PowerShell"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:50
 msgid "Python"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:51
 msgid "Ruby"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:52
 msgid "SASS"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:53
 msgid "Scala"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:54
 msgid "SQL"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:55
 msgid "Tap"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:56
 msgid "TypeScript"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:57
 msgid "Visual Basic"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:58
 msgid "XML/XSLT/XHTML/HTML"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:59
 msgid "Yaml"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:65 ../git-plugins/yash/index.php:69
 msgid "YASH - Syntax Selector"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:71
 msgid "Select the primary syntax of your code snippet."
 msgstr ""
 
-#: ../git-plugins/yash/index.php:73
 msgid "Cancel"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:74
 msgid "Ok"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:119
 msgid "Default"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:120
 msgid "Django"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:121
 msgid "Eclipse"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:122
 msgid "Emacs"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:123
 msgid "Fade to gray"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:124
 msgid "Material"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:125
 msgid "MD Ultra"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:126
 msgid "Midnight"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:127
 msgid "RDark"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:128
 msgid "Solarized Dark"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:129
 msgid "Solarized Light"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:130
 msgid "Tomorrow Night"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:138
 msgid "Enable YASH"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:141
 msgid "Presentation"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:142
 msgid "Theme:"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:146
 msgid "Use custom CSS:"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:150
 msgid "You can use a custom CSS by providing its location."
 msgstr ""
 
-#: ../git-plugins/yash/index.php:151
 msgid "A location beginning with a / is treated as absolute, else it is treated as relative to the blog's current theme URL"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:155
 msgid "Hide gutter with line numbers"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:157
 msgid "Options"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:160
 msgid "SyntaxeHL compatibility mode"
 msgstr ""
 
-#: ../git-plugins/yash/index.php:163
 msgid "All SyntaxeHL languages is not supported by Yash (see documentation)."
 msgstr ""
 
-#: ../git-plugins/yash/index.php:163
 msgid "Will be applied on future edition of posts containing SyntaxeHL macros (///[language]…///)."
 msgstr ""
