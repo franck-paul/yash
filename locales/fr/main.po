@@ -1,21 +1,24 @@
-# French translations for YASH package.
-# Copyright (C) 2008 THE PLUGIN'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the Dotclear package.
-# Pep <>, 2008.
-#
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Franck Paul <carnet.franck.paul@gmail.com>, 2023
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Dotclear 2-plugins\n"
+"Project-Id-Version: Dotclear 2 yash module\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-04 16:56+0100\n"
-"PO-Revision-Date: 2008-05-30 04:19+0100\n"
-"Last-Translator: Pep <>\n"
-"Language-Team: French\n"
-"Language: \n"
+"POT-Creation-Date: 2023-04-12 14:56+0200\n"
+"PO-Revision-Date: 2023-04-12 13:01+0000\n"
+"Last-Translator: Franck Paul <carnet.franck.paul@gmail.com>, 2023\n"
+"Language-Team: French (https://app.transifex.com/open-time/teams/109573/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid "YASH"
 msgstr "YASH"
@@ -30,88 +33,88 @@ msgid "Plain Text"
 msgstr "Texte simple"
 
 msgid "AppleScript"
-msgstr ""
+msgstr "AppleScript"
 
 msgid "ActionScript3"
-msgstr ""
+msgstr "ActionScript3"
 
 msgid "Bash/shell"
-msgstr ""
+msgstr "Bash/shell"
 
 msgid "ColdFusion"
-msgstr ""
+msgstr "ColdFusion"
 
 msgid "C#"
-msgstr ""
+msgstr "C#"
 
 msgid "C/C++"
-msgstr ""
+msgstr "C/C++"
 
 msgid "CSS"
-msgstr ""
+msgstr "CSS"
 
 msgid "Delphi"
-msgstr ""
+msgstr "Delphi"
 
 msgid "Diff/Patch"
-msgstr ""
+msgstr "Diff/Patch"
 
 msgid "Erlang"
-msgstr ""
+msgstr "Erlang"
 
 msgid "Groovy"
-msgstr ""
+msgstr "Groovy"
 
 msgid "Haxe"
-msgstr ""
+msgstr "Haxe"
 
 msgid "Javascript/JSON"
-msgstr ""
+msgstr "Javascript/JSON"
 
 msgid "Java"
-msgstr ""
+msgstr "Java"
 
 msgid "JavaFX"
-msgstr ""
+msgstr "JavaFX"
 
 msgid "Perl"
-msgstr ""
+msgstr "Perl"
 
 msgid "PHP"
-msgstr ""
+msgstr "PHP"
 
 msgid "PowerShell"
-msgstr ""
+msgstr "PowerShell"
 
 msgid "Python"
-msgstr ""
+msgstr "Python"
 
 msgid "Ruby"
-msgstr ""
+msgstr "Ruby"
 
 msgid "SASS"
-msgstr ""
+msgstr "SASS"
 
 msgid "Scala"
-msgstr ""
+msgstr "Scala"
 
 msgid "SQL"
-msgstr ""
+msgstr "SQL"
 
 msgid "Tap"
-msgstr ""
+msgstr "Tap"
 
 msgid "TypeScript"
-msgstr ""
+msgstr "TypeScript"
 
 msgid "Visual Basic"
-msgstr ""
+msgstr "Visual Basic"
 
 msgid "XML/XSLT/XHTML/HTML"
-msgstr ""
+msgstr "XML/XSLT/XHTML/HTML"
 
 msgid "Yaml"
-msgstr ""
+msgstr "Yaml"
 
 msgid "YASH - Syntax Selector"
 msgstr "YASH - Sélecteur de syntaxe"
@@ -119,38 +122,47 @@ msgstr "YASH - Sélecteur de syntaxe"
 msgid "Select the primary syntax of your code snippet."
 msgstr "Sélectionnez la syntaxe principale de votre extrait de code."
 
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Ok"
+msgstr "Ok"
+
+msgid "Default"
+msgstr "Défaut"
+
 msgid "Django"
-msgstr ""
+msgstr "Django"
 
 msgid "Eclipse"
-msgstr ""
+msgstr "Eclipse"
 
 msgid "Emacs"
-msgstr ""
+msgstr "Emacs"
 
 msgid "Fade to gray"
-msgstr ""
+msgstr "Fade to gray"
 
 msgid "Material"
-msgstr ""
+msgstr "Material"
 
 msgid "MD Ultra"
-msgstr ""
+msgstr "MD Ultra"
 
 msgid "Midnight"
-msgstr ""
+msgstr "Midnight"
 
 msgid "RDark"
-msgstr ""
+msgstr "RDark"
 
 msgid "Solarized Dark"
-msgstr ""
+msgstr "Solarized Dark"
 
 msgid "Solarized Light"
-msgstr ""
+msgstr "Solarized Light"
 
 msgid "Tomorrow Night"
-msgstr ""
+msgstr "Tomorrow Night"
 
 msgid "Enable YASH"
 msgstr "Activer YASH"
@@ -158,44 +170,41 @@ msgstr "Activer YASH"
 msgid "Presentation"
 msgstr "Présentation"
 
+msgid "Theme:"
+msgstr "Thème :"
+
 msgid "Use custom CSS:"
 msgstr "CSS personnalisée :"
 
 msgid "You can use a custom CSS by providing its location."
-msgstr "Vous pouvez utiliser une CSS personnalisée en fournissant son adresse."
+msgstr ""
+"Vous pouvez utiliser une CSS personnalisée en fournissant son adresse."
 
-msgid "A location beginning with a / is treated as absolute, else it is treated as relative to the blog's current theme URL"
-msgstr "Une adresse commençant par un / est considérée comme absolue, sinon elle est traitée comme relative à l'adresse du thème actuellement en usage sur le blog."
+msgid ""
+"A location beginning with a / is treated as absolute, else it is treated as "
+"relative to the blog's current theme URL"
+msgstr ""
+"Une adresse commençant par un / est considérée comme absolue, sinon elle est"
+" traitée comme relative à l'adresse du thème actuellement en usage sur le "
+"blog."
 
 msgid "Hide gutter with line numbers"
 msgstr "Masquer la colonne avec les numéros de ligne"
+
+msgid "Options"
+msgstr "Options"
 
 msgid "SyntaxeHL compatibility mode"
 msgstr "Mode de compatibilité avec SyntaxeHL"
 
 msgid "All SyntaxeHL languages is not supported by Yash (see documentation)."
-msgstr "Tous les langages proposés par SyntaxeHL ne sont pas supportés (voir la documentation)."
+msgstr ""
+"Tous les langages proposés par SyntaxeHL ne sont pas supportés (voir la "
+"documentation)."
 
-msgid "Will be applied on future edition of posts containing SyntaxeHL macros (///[language]…///)."
-msgstr "Sera appliqué aux prochaines éditions des billets contenant des macros SyntaxeHL (///[langage]…///)."
-
-#~ msgid "Theme:"
-#~ msgstr "Thème :"
-
-#~ msgid "Configuration successfully updated."
-#~ msgstr "La configuration a été mise à jour."
-
-#~ msgid "Save configuration"
-#~ msgstr "Enregistrer la configuration"
-
-#~ msgid "Cancel"
-#~ msgstr "Annuler"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "Plugin activation"
-#~ msgstr "Activation de l'extension"
-
-#~ msgid "Options"
-#~ msgstr "Options"
+msgid ""
+"Will be applied on future edition of posts containing SyntaxeHL macros "
+"(///[language]…///)."
+msgstr ""
+"Sera appliqué aux prochaines éditions des billets contenant des macros "
+"SyntaxeHL (///[langage]…///)."
