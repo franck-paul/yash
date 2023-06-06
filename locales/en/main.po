@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dotclear 2 yash module\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-12 14:56+0200\n"
+"POT-Creation-Date: 2023-06-06 10:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -166,16 +166,13 @@ msgstr ""
 msgid "Presentation"
 msgstr ""
 
-msgid "Theme:"
-msgstr ""
-
 msgid "Use custom CSS:"
 msgstr ""
 
-msgid "You can use a custom CSS by providing its location."
+msgid "A location beginning with a / is treated as absolute, else it is treated as relative to the blog's current theme URL"
 msgstr ""
 
-msgid "A location beginning with a / is treated as absolute, else it is treated as relative to the blog's current theme URL"
+msgid "You can use a custom CSS by providing its location."
 msgstr ""
 
 msgid "Hide gutter with line numbers"

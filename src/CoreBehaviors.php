@@ -1,17 +1,22 @@
 <?php
 /**
- * @brief YASH, a plugin for Dotclear 2
+ * @brief yash, a plugin for Dotclear 2
  *
  * @package Dotclear
  * @subpackage Plugins
  *
- * @author Pep
- * @author Franck Paul
+ * @author Franck Paul and contributors
  *
- * @copyright Pep
+ * @copyright Franck Paul carnet.franck.paul@gmail.com
  * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
-class yashBehaviors
+declare(strict_types=1);
+
+namespace Dotclear\Plugin\yash;
+
+use dcCore;
+
+class CoreBehaviors
 {
     private static array $syntaxehl_brushes = [
         '4cs'           => '',
@@ -192,25 +197,14 @@ class yashBehaviors
         'z80'           => '',
     ];
 
-    public static function adminPostEditor($editor = ''): string
-    {
-        if ($editor != 'dcLegacyEditor') {
-            return '';
-        }
-
-        return
-        dcPage::jsJson('dc_editor_yash', ['title' => __('Highlighted Code')]) .
-        dcPage::jsModuleLoad('yash/js/post.js', dcCore::app()->getVersion('yash'));
-    }
-
     public static function coreInitWikiPost($wiki)
     {
-        $wiki->registerFunction('macro:yash', ['yashBehaviors', 'transform']);
+        $wiki->registerFunction('macro:yash', [static::class, 'transform']);
 
         if ((bool) dcCore::app()->blog->settings->yash->yash_syntaxehl) {
             // Add syntaxehl compatibility macros
             foreach (self::$syntaxehl_brushes as $brush => $alias) {
-                $wiki->registerFunction('macro:[' . $brush . ']', ['yashBehaviors', 'transformSyntaxehl']);
+                $wiki->registerFunction('macro:[' . $brush . ']', [static::class, 'transformSyntaxehl']);
             }
         }
     }
