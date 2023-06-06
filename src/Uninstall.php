@@ -35,7 +35,7 @@ class Uninstall extends dcNsProcess
 
         $module = My::id();
 
-        // $ns = My::id(); // Namespace for blog settings
+        $ns = My::id(); // Namespace for blog settings
         // $ws = My::id(); // Workspace for user preferences
 
         // $cache = My::id(); // Cache sub-folder
@@ -60,9 +60,9 @@ class Uninstall extends dcNsProcess
 
             // Blog settings
             'settings' => [
-                // ['delete_local', $ns],      // Delete local settings
-                // ['delete_global', $ns],     // Delete global settings
-                // ['delete_all', $ns],        // Delete all settings
+                ['delete_local', $ns],      // Delete local settings
+                ['delete_global', $ns],     // Delete global settings
+                ['delete_all', $ns],        // Delete all settings
 
                 // ['delete_related', 'ns:id;ns:id;'], // Delete specific setting(s)
             ],
