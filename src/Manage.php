@@ -153,7 +153,9 @@ class Manage extends dcNsProcess
         }
 
         // Getting current parameters if any (get global parameters if not)
-        $settings    = dcCore::app()->blog->settings->get(My::id());
+
+        $settings = dcCore::app()->blog->settings->get(My::id());
+
         $active      = (bool) $settings->active;
         $theme       = (string) $settings->theme;
         $custom_css  = (string) $settings->custom_css;
@@ -203,7 +205,7 @@ class Manage extends dcNsProcess
                         (new Select('theme'))
                             ->items($combo_theme)
                             ->default($theme)
-                            ->label((new Label(__('Select the primary syntax of your code snippet.'), Label::INSIDE_TEXT_BEFORE))),
+                            ->label((new Label(__('Theme:'), Label::INSIDE_TEXT_BEFORE))),
                     ]),
                     (new Para())->items([
                         (new Input('custom_css'))

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dotclear 2 yash module\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-06 10:55+0200\n"
+"POT-Creation-Date: 2023-06-06 14:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,8 +18,8 @@ msgstr ""
 
 #: ../git-plugins/yash/src/Backend.php:28
 #: ../git-plugins/yash/src/Backend.php:40
-#: ../git-plugins/yash/src/Manage.php:178
-#: ../git-plugins/yash/src/Manage.php:183
+#: ../git-plugins/yash/src/Manage.php:180
+#: ../git-plugins/yash/src/Manage.php:185
 msgid "YASH"
 msgstr ""
 
@@ -152,7 +152,6 @@ msgid "YASH - Syntax Selector"
 msgstr ""
 
 #: ../git-plugins/yash/src/Manage.php:140
-#: ../git-plugins/yash/src/Manage.php:206
 msgid "Select the primary syntax of your code snippet."
 msgstr ""
 
@@ -164,90 +163,94 @@ msgstr ""
 msgid "Ok"
 msgstr ""
 
-#: ../git-plugins/yash/src/Manage.php:164
+#: ../git-plugins/yash/src/Manage.php:166
 msgid "Default"
 msgstr ""
 
-#: ../git-plugins/yash/src/Manage.php:165
+#: ../git-plugins/yash/src/Manage.php:167
 msgid "Django"
 msgstr ""
 
-#: ../git-plugins/yash/src/Manage.php:166
+#: ../git-plugins/yash/src/Manage.php:168
 msgid "Eclipse"
 msgstr ""
 
-#: ../git-plugins/yash/src/Manage.php:167
+#: ../git-plugins/yash/src/Manage.php:169
 msgid "Emacs"
 msgstr ""
 
-#: ../git-plugins/yash/src/Manage.php:168
+#: ../git-plugins/yash/src/Manage.php:170
 msgid "Fade to gray"
 msgstr ""
 
-#: ../git-plugins/yash/src/Manage.php:169
+#: ../git-plugins/yash/src/Manage.php:171
 msgid "Material"
 msgstr ""
 
-#: ../git-plugins/yash/src/Manage.php:170
+#: ../git-plugins/yash/src/Manage.php:172
 msgid "MD Ultra"
 msgstr ""
 
-#: ../git-plugins/yash/src/Manage.php:171
+#: ../git-plugins/yash/src/Manage.php:173
 msgid "Midnight"
 msgstr ""
 
-#: ../git-plugins/yash/src/Manage.php:172
+#: ../git-plugins/yash/src/Manage.php:174
 msgid "RDark"
 msgstr ""
 
-#: ../git-plugins/yash/src/Manage.php:173
+#: ../git-plugins/yash/src/Manage.php:175
 msgid "Solarized Dark"
 msgstr ""
 
-#: ../git-plugins/yash/src/Manage.php:174
+#: ../git-plugins/yash/src/Manage.php:176
 msgid "Solarized Light"
 msgstr ""
 
-#: ../git-plugins/yash/src/Manage.php:175
+#: ../git-plugins/yash/src/Manage.php:177
 msgid "Tomorrow Night"
 msgstr ""
 
-#: ../git-plugins/yash/src/Manage.php:197
+#: ../git-plugins/yash/src/Manage.php:199
 msgid "Enable YASH"
 msgstr ""
 
-#: ../git-plugins/yash/src/Manage.php:200
+#: ../git-plugins/yash/src/Manage.php:202
 msgid "Presentation"
 msgstr ""
 
-#: ../git-plugins/yash/src/Manage.php:213
+#: ../git-plugins/yash/src/Manage.php:208
+msgid "Theme:"
+msgstr ""
+
+#: ../git-plugins/yash/src/Manage.php:215
 msgid "Use custom CSS:"
 msgstr ""
 
-#: ../git-plugins/yash/src/Manage.php:216
+#: ../git-plugins/yash/src/Manage.php:218
 msgid "A location beginning with a / is treated as absolute, else it is treated as relative to the blog's current theme URL"
 msgstr ""
 
-#: ../git-plugins/yash/src/Manage.php:216
+#: ../git-plugins/yash/src/Manage.php:218
 msgid "You can use a custom CSS by providing its location."
 msgstr ""
 
-#: ../git-plugins/yash/src/Manage.php:221
+#: ../git-plugins/yash/src/Manage.php:223
 msgid "Hide gutter with line numbers"
 msgstr ""
 
-#: ../git-plugins/yash/src/Manage.php:225
+#: ../git-plugins/yash/src/Manage.php:227
 msgid "Options"
 msgstr ""
 
-#: ../git-plugins/yash/src/Manage.php:230
+#: ../git-plugins/yash/src/Manage.php:232
 msgid "SyntaxeHL compatibility mode"
 msgstr ""
 
-#: ../git-plugins/yash/src/Manage.php:233
+#: ../git-plugins/yash/src/Manage.php:235
 msgid "All SyntaxeHL languages is not supported by Yash (see documentation)."
 msgstr ""
 
-#: ../git-plugins/yash/src/Manage.php:233
+#: ../git-plugins/yash/src/Manage.php:235
 msgid "Will be applied on future edition of posts containing SyntaxeHL macros (///[language]…///)."
 msgstr ""

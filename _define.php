@@ -15,7 +15,7 @@ $this->registerModule(
     'YASH',
     'Yet Another Syntax Highlighter',
     'Pep and contributors',
-    '3.0.2',
+    '3.0.3',
     [
         'requires'    => [['core', '2.26']],
         'permissions' => dcCore::app()->auth->makePermissions([
