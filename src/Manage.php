@@ -138,9 +138,9 @@ class Manage extends dcNsProcess
                             (new Select('syntax'))
                                 ->items(array_flip($brushes))
                                 ->label((new Label(__('Select the primary syntax of your code snippet.'), Label::INSIDE_TEXT_BEFORE))),
-                            (new Submit(['yash-cancel']))
+                            (new Submit('yash-cancel'))
                                 ->value(__('Cancel')),
-                            (new Submit(['yash-ok']))
+                            (new Submit('yash-ok'))
                                 ->value(__('Ok')),
                             dcCore::app()->formNonce(false),
                         ]),
