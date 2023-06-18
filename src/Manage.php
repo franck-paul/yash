@@ -132,18 +132,21 @@ class Manage extends dcNsProcess
                 ->method('get')
                 ->fields([
                     (new Para())
-                        ->separator(' ')
-                        ->class('field')
-                        ->items([
-                            (new Select('syntax'))
-                                ->items(array_flip($brushes))
-                                ->label((new Label(__('Select the primary syntax of your code snippet.'), Label::INSIDE_TEXT_BEFORE))),
-                            (new Submit('yash-cancel'))
-                                ->value(__('Cancel')),
-                            (new Submit('yash-ok'))
-                                ->value(__('Ok')),
-                            dcCore::app()->formNonce(false),
-                        ]),
+                    ->items([
+                        (new Select('syntax'))
+                            ->items(array_flip($brushes))
+                            ->autofocus(true)
+                            ->label((new Label(__('Select the primary syntax of your code snippet.'), Label::INSIDE_TEXT_BEFORE))),
+                    ]),
+                    (new Para())
+                    ->separator(' ')
+                    ->items([
+                        (new Submit('yash-cancel'))
+                            ->value(__('Cancel')),
+                        (new Submit('yash-ok'))
+                            ->value(__('Ok')),
+                        dcCore::app()->formNonce(false),
+                    ]),
                 ])
             ->render();
 
