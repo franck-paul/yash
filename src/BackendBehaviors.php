@@ -26,7 +26,11 @@ class BackendBehaviors
         }
 
         return
-        dcPage::jsJson('dc_editor_yash', ['title' => __('Highlighted Code')]) .
+        dcPage::jsJson('dc_editor_yash', [
+            'title'    => __('Highlighted Code'),
+            'icon'     => urldecode(dcPage::getPF(My::id() . '/icon.svg')),
+            'open_url' => urldecode(My::makeUrl(['popup' => 1])),
+        ]) .
         dcPage::jsModuleLoad(My::id() . '/js/post.js', dcCore::app()->getVersion(My::id()));
     }
 }
