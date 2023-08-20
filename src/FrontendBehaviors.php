@@ -40,7 +40,7 @@ class FrontendBehaviors
                 }
             }
             echo
-            dcUtils::cssModuleLoad(My::id() . '/syntaxhighlighter/css/shCore.css') .
+            My::cssLoad('/syntaxhighlighter/css/shCore.css') .
             dcUtils::cssLoad($css);
         }
     }
@@ -49,13 +49,13 @@ class FrontendBehaviors
     {
         if (dcCore::app()->blog->settings->yash->active) {
             echo
-            dcUtils::jsModuleLoad(My::id() . '/syntaxhighlighter/js/shCore.js') .
-            dcUtils::jsModuleLoad(My::id() . '/syntaxhighlighter/js/shAutoloader.js') .
+            My::jsLoad('/syntaxhighlighter/js/shCore.js') .
+            My::jsLoad('/syntaxhighlighter/js/shAutoloader.js') .
             dcUtils::jsJson('yash_config', [
                 'path'   => dcCore::app()->blog->getPF(My::id() . '/syntaxhighlighter/js/'),
                 'gutter' => dcCore::app()->blog->settings->yash->hide_gutter ? false : true,
             ]) .
-            dcUtils::jsModuleLoad(My::id() . '/js/public.js');
+            My::jsLoad('public.js');
         }
     }
 }

@@ -199,12 +199,12 @@ class CoreBehaviors
 
     public static function coreInitWikiPost($wiki)
     {
-        $wiki->registerFunction('macro:yash', [static::class, 'transform']);
+        $wiki->registerFunction('macro:yash', static::transform(...));
 
         if ((bool) dcCore::app()->blog->settings->yash->yash_syntaxehl) {
             // Add syntaxehl compatibility macros
             foreach (self::$syntaxehl_brushes as $brush => $alias) {
-                $wiki->registerFunction('macro:[' . $brush . ']', [static::class, 'transformSyntaxehl']);
+                $wiki->registerFunction('macro:[' . $brush . ']', static::transformSyntaxehl(...));
             }
         }
     }

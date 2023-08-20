@@ -14,8 +14,7 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\yash;
 
-use dcCore;
-use dcPage;
+use Dotclear\Core\Backend\Page;
 
 class BackendBehaviors
 {
@@ -26,11 +25,11 @@ class BackendBehaviors
         }
 
         return
-        dcPage::jsJson('dc_editor_yash', [
+        Page::jsJson('dc_editor_yash', [
             'title'    => __('Highlighted Code'),
-            'icon'     => urldecode(dcPage::getPF(My::id() . '/icon.svg')),
-            'open_url' => urldecode(My::makeUrl(['popup' => 1])),
+            'icon'     => urldecode(Page::getPF(My::id() . '/icon.svg')),
+            'open_url' => urldecode(My::manageUrl(['popup' => 1])),
         ]) .
-        dcPage::jsModuleLoad(My::id() . '/js/post.js', dcCore::app()->getVersion(My::id()));
+        My::jsLoad('post.js');
     }
 }
