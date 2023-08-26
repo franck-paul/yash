@@ -42,14 +42,14 @@ class Install extends Process
                         $settings->rename('yash_' . $name, $name);
                     }
                 };
-                $settings = dcCore::app()->blog->settings->get(My::id());
+                $settings = My::settings();
                 foreach (['active', 'theme', 'custom_css', 'hide_gutter', 'syntaxehl'] as $name) {
                     $rename($name, $settings);
                 }
             }
 
             // Init
-            $settings = dcCore::app()->blog->settings->get(My::id());
+            $settings = My::settings();
             $settings->put('active', false, dcNamespace::NS_BOOL, '', false, true);
             $settings->put('theme', 'Default', dcNamespace::NS_STRING, '', false, true);
             $settings->put('custom_css', '', dcNamespace::NS_STRING, '', false, true);

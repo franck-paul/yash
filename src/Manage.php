@@ -59,7 +59,7 @@ class Manage extends Process
                 $hide_gutter = (empty($_POST['hide_gutter'])) ? false : true;
                 $syntaxehl   = (empty($_POST['syntaxehl'])) ? false : true;
 
-                $settings = dcCore::app()->blog->settings->get(My::id());
+                $settings = My::settings();
                 $settings->put('active', $active, dcNamespace::NS_BOOL);
                 $settings->put('theme', $theme, dcNamespace::NS_STRING);
                 $settings->put('custom_css', $custom_css, dcNamespace::NS_STRING);
@@ -122,7 +122,7 @@ class Manage extends Process
 
             $head = My::jsLoad('popup.js');
 
-            Page::openModule(__('YASH - Syntax Selector'), $head);
+            Page::openModule(My::name() . ' - ' . __('Syntax Selector'), $head);
 
             echo
             (new Form('yash-form'))
@@ -143,7 +143,7 @@ class Manage extends Process
                             ->value(__('Cancel')),
                         (new Submit('yash-ok'))
                             ->value(__('Ok')),
-                        dcCore::app()->formNonce(false),
+                        ... My::hiddenFields(),
                     ]),
                 ])
             ->render();
@@ -155,7 +155,7 @@ class Manage extends Process
 
         // Getting current parameters if any (get global parameters if not)
 
-        $settings = dcCore::app()->blog->settings->get(My::id());
+        $settings = My::settings();
 
         $active      = (bool) $settings->active;
         $theme       = (string) $settings->theme;
@@ -178,7 +178,7 @@ class Manage extends Process
             __('Tomorrow Night')  => 'TomorrowNight',
         ];
 
-        Page::openModule(__('YASH'));
+        Page::openModule(My::name());
 
         echo Page::breadcrumb(
             [
@@ -239,7 +239,7 @@ class Manage extends Process
                 (new Para())->items([
                     (new Submit(['saveconfig'], __('Save configuration')))
                         ->accesskey('s'),
-                    dcCore::app()->formNonce(false),
+                    ... My::hiddenFields(),
                 ]),
             ])
         ->render();
