@@ -18,7 +18,7 @@ use Dotclear\Core\Backend\Page;
 
 class BackendBehaviors
 {
-    public static function adminPostEditor($editor = ''): string
+    public static function adminPostEditor(string $editor = ''): string
     {
         if ($editor != 'dcLegacyEditor') {
             return '';

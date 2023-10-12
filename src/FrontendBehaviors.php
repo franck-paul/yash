@@ -19,12 +19,12 @@ use dcUtils;
 
 class FrontendBehaviors
 {
-    public static function publicHeadContent()
+    public static function publicHeadContent(): string
     {
         if (dcCore::app()->blog->settings->yash->active) {
             $custom_css = dcCore::app()->blog->settings->yash->custom_css;
             if (!empty($custom_css)) {
-                if (strpos((string) $custom_css, '/') === 0) {
+                if (str_starts_with((string) $custom_css, '/')) {
                     $css = $custom_css;
                 } else {
                     $css = dcCore::app()->blog->settings->system->themes_url . '/' .
@@ -43,9 +43,11 @@ class FrontendBehaviors
             My::cssLoad('/syntaxhighlighter/css/shCore.css') .
             dcUtils::cssLoad($css);
         }
+
+        return '';
     }
 
-    public static function publicFooterContent()
+    public static function publicFooterContent(): string
     {
         if (dcCore::app()->blog->settings->yash->active) {
             echo
@@ -57,5 +59,7 @@ class FrontendBehaviors
             ]) .
             My::jsLoad('public.js');
         }
+
+        return '';
     }
 }

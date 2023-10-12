@@ -15,9 +15,13 @@ declare(strict_types=1);
 namespace Dotclear\Plugin\yash;
 
 use dcCore;
+use Dotclear\Helper\Html\WikiToHtml;
 
 class CoreBehaviors
 {
+    /**
+     * @var array<string, string>
+     */
     private static array $syntaxehl_brushes = [
         '4cs'           => '',
         'abap'          => '',
@@ -197,7 +201,7 @@ class CoreBehaviors
         'z80'           => '',
     ];
 
-    public static function coreInitWikiPost($wiki)
+    public static function coreInitWikiPost(WikiToHtml $wiki): string
     {
         $wiki->registerFunction('macro:yash', static::transform(...));
 
@@ -207,9 +211,19 @@ class CoreBehaviors
                 $wiki->registerFunction('macro:[' . $brush . ']', static::transformSyntaxehl(...));
             }
         }
+
+        return '';
     }
 
-    public static function transform($text, $args)
+    /**
+     * Transform macro
+     *
+     * @param      string       $text   The text
+     * @param      string       $args   The arguments
+     *
+     * @return     string
+     */
+    public static function transform(string $text, string $args): string
     {
         $text      = trim((string) $text);
         $real_args = explode(' ', $args);
@@ -218,7 +232,15 @@ class CoreBehaviors
         return '<pre class="brush: ' . $class . '">' . htmlspecialchars($text) . '</pre>';
     }
 
-    public static function transformSyntaxehl($text, $args)
+    /**
+     * Transform macro (SyntaxeHL compliance)
+     *
+     * @param      string       $text   The text
+     * @param      string       $args   The arguments
+     *
+     * @return     string
+     */
+    public static function transformSyntaxehl(string $text, string $args): string
     {
         $text      = trim((string) $text);
         $real_args = preg_replace('/^(\[(.*)\]$)/', '$2', (string) $args);
