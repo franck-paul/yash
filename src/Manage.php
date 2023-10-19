@@ -16,6 +16,7 @@ namespace Dotclear\Plugin\yash;
 
 use dcCore;
 use dcNamespace;
+use Dotclear\App;
 use Dotclear\Core\Backend\Notices;
 use Dotclear\Core\Backend\Page;
 use Dotclear\Core\Process;
@@ -66,10 +67,10 @@ class Manage extends Process
                 $settings->put('hide_gutter', $hide_gutter, dcNamespace::NS_BOOL);
                 $settings->put('syntaxehl', $syntaxehl, dcNamespace::NS_BOOL);
 
-                dcCore::app()->blog->triggerBlog();
+                App::blog()->triggerBlog();
 
                 Notices::addSuccessNotice(__('Configuration successfully updated.'));
-                dcCore::app()->admin->url->redirect('admin.plugin.' . My::id());
+                dcCore::app()->adminurl->redirect('admin.plugin.' . My::id());
             } catch (Exception $e) {
                 dcCore::app()->error->add($e->getMessage());
             }
@@ -182,8 +183,8 @@ class Manage extends Process
 
         echo Page::breadcrumb(
             [
-                Html::escapeHTML(dcCore::app()->blog->name) => '',
-                __('YASH')                                  => '',
+                Html::escapeHTML(App::blog()->name()) => '',
+                __('YASH')                            => '',
             ]
         );
         echo Notices::getNotices();

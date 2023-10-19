@@ -14,29 +14,30 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\yash;
 
-use dcCore;
 use dcUtils;
+use Dotclear\App;
 
 class FrontendBehaviors
 {
     public static function publicHeadContent(): string
     {
-        if (dcCore::app()->blog->settings->yash->active) {
-            $custom_css = dcCore::app()->blog->settings->yash->custom_css;
+        $settings = My::settings();
+        if ($settings->active) {
+            $custom_css = $settings->custom_css;
             if (!empty($custom_css)) {
                 if (str_starts_with((string) $custom_css, '/')) {
                     $css = $custom_css;
                 } else {
-                    $css = dcCore::app()->blog->settings->system->themes_url . '/' .
-                    dcCore::app()->blog->settings->system->theme . '/' .
+                    $css = App::blog()->settings()->system->themes_url . '/' .
+                    App::blog()->settings()->system->theme . '/' .
                         $custom_css;
                 }
             } else {
-                $theme = (string) dcCore::app()->blog->settings->yash->theme;
+                $theme = (string) $settings->theme;
                 if ($theme === '') {
-                    $css = dcCore::app()->blog->getPF(My::id() . '/syntaxhighlighter/css/shThemeDefault.css');
+                    $css = App::blog()->getPF(My::id() . '/syntaxhighlighter/css/shThemeDefault.css');
                 } else {
-                    $css = dcCore::app()->blog->getPF(My::id() . '/syntaxhighlighter/css/shTheme' . $theme . '.css');
+                    $css = App::blog()->getPF(My::id() . '/syntaxhighlighter/css/shTheme' . $theme . '.css');
                 }
             }
             echo
@@ -49,13 +50,14 @@ class FrontendBehaviors
 
     public static function publicFooterContent(): string
     {
-        if (dcCore::app()->blog->settings->yash->active) {
+        $settings = My::settings();
+        if ($settings->active) {
             echo
             My::jsLoad('/syntaxhighlighter/js/shCore.js') .
             My::jsLoad('/syntaxhighlighter/js/shAutoloader.js') .
             dcUtils::jsJson('yash_config', [
-                'path'   => dcCore::app()->blog->getPF(My::id() . '/syntaxhighlighter/js/'),
-                'gutter' => dcCore::app()->blog->settings->yash->hide_gutter ? false : true,
+                'path'   => App::blog()->getPF(My::id() . '/syntaxhighlighter/js/'),
+                'gutter' => $settings->hide_gutter ? false : true,
             ]) .
             My::jsLoad('public.js');
         }

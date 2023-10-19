@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\yash;
 
-use dcCore;
 use Dotclear\Helper\Html\WikiToHtml;
 
 class CoreBehaviors
@@ -205,7 +204,7 @@ class CoreBehaviors
     {
         $wiki->registerFunction('macro:yash', static::transform(...));
 
-        if ((bool) dcCore::app()->blog->settings->yash->yash_syntaxehl) {
+        if ((bool) My::settings()->yash_syntaxehl) {
             // Add syntaxehl compatibility macros
             foreach (self::$syntaxehl_brushes as $brush => $alias) {
                 $wiki->registerFunction('macro:[' . $brush . ']', static::transformSyntaxehl(...));
@@ -243,7 +242,7 @@ class CoreBehaviors
     public static function transformSyntaxehl(string $text, string $args): string
     {
         $text      = trim((string) $text);
-        $real_args = preg_replace('/^(\[(.*)\]$)/', '$2', (string) $args);
+        $real_args = (string) preg_replace('/^(\[(.*)\]$)/', '$2', (string) $args);
         $class     = array_key_exists($real_args, self::$syntaxehl_brushes) && self::$syntaxehl_brushes[$real_args] != ''
         ? self::$syntaxehl_brushes[$real_args]
         : 'plain';
