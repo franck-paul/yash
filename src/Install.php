@@ -14,9 +14,9 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\yash;
 
-use dcCore;
-use dcNamespace;
+use Dotclear\App;
 use Dotclear\Core\Process;
+use Dotclear\Interface\Core\BlogWorkspaceInterface;
 use Exception;
 
 class Install extends Process
@@ -34,10 +34,10 @@ class Install extends Process
 
         try {
             // Update
-            $old_version = dcCore::app()->getVersion(My::id());
+            $old_version = App::version()->getVersion(My::id());
             if (version_compare((string) $old_version, '3.0', '<')) {
                 // Change settings names (remove yash_ prefix in them)
-                $rename = function (string $name, dcNamespace $settings): void {
+                $rename = function (string $name, BlogWorkspaceInterface $settings): void {
                     if ($settings->settingExists('yash_' . $name, true)) {
                         $settings->rename('yash_' . $name, $name);
                     }
@@ -50,13 +50,13 @@ class Install extends Process
 
             // Init
             $settings = My::settings();
-            $settings->put('active', false, dcNamespace::NS_BOOL, '', false, true);
-            $settings->put('theme', 'Default', dcNamespace::NS_STRING, '', false, true);
-            $settings->put('custom_css', '', dcNamespace::NS_STRING, '', false, true);
-            $settings->put('hide_gutter', false, dcNamespace::NS_BOOL, '', false, true);
-            $settings->put('syntaxehl', false, dcNamespace::NS_BOOL, '', false, true);
+            $settings->put('active', false, App::blogWorkspace()::NS_BOOL, '', false, true);
+            $settings->put('theme', 'Default', App::blogWorkspace()::NS_STRING, '', false, true);
+            $settings->put('custom_css', '', App::blogWorkspace()::NS_STRING, '', false, true);
+            $settings->put('hide_gutter', false, App::blogWorkspace()::NS_BOOL, '', false, true);
+            $settings->put('syntaxehl', false, App::blogWorkspace()::NS_BOOL, '', false, true);
         } catch (Exception $e) {
-            dcCore::app()->error->add($e->getMessage());
+            App::error()->add($e->getMessage());
         }
 
         return true;

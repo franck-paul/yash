@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\yash;
 
-use dcCore;
+use Dotclear\App;
 use Dotclear\Core\Backend\Menus;
 use Dotclear\Core\Process;
 
@@ -36,10 +36,8 @@ class Backend extends Process
 
         My::addBackendMenuItem(Menus::MENU_BLOG);
 
-        dcCore::app()->addBehavior('adminPostEditor', BackendBehaviors::adminPostEditor(...));
+        App::behavior()->addBehavior('adminPostEditor', BackendBehaviors::adminPostEditor(...));
 
         return true;
     }
 }
-
-// --- old code below ---

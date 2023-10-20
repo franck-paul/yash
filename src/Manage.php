@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\yash;
 
-use dcCore;
-use dcNamespace;
 use Dotclear\App;
 use Dotclear\Core\Backend\Notices;
 use Dotclear\Core\Backend\Page;
@@ -61,18 +59,18 @@ class Manage extends Process
                 $syntaxehl   = (empty($_POST['syntaxehl'])) ? false : true;
 
                 $settings = My::settings();
-                $settings->put('active', $active, dcNamespace::NS_BOOL);
-                $settings->put('theme', $theme, dcNamespace::NS_STRING);
-                $settings->put('custom_css', $custom_css, dcNamespace::NS_STRING);
-                $settings->put('hide_gutter', $hide_gutter, dcNamespace::NS_BOOL);
-                $settings->put('syntaxehl', $syntaxehl, dcNamespace::NS_BOOL);
+                $settings->put('active', $active, App::blogWorkspace()::NS_BOOL);
+                $settings->put('theme', $theme, App::blogWorkspace()::NS_STRING);
+                $settings->put('custom_css', $custom_css, App::blogWorkspace()::NS_STRING);
+                $settings->put('hide_gutter', $hide_gutter, App::blogWorkspace()::NS_BOOL);
+                $settings->put('syntaxehl', $syntaxehl, App::blogWorkspace()::NS_BOOL);
 
                 App::blog()->triggerBlog();
 
                 Notices::addSuccessNotice(__('Configuration successfully updated.'));
-                dcCore::app()->adminurl->redirect('admin.plugin.' . My::id());
+                My::redirect();
             } catch (Exception $e) {
-                dcCore::app()->error->add($e->getMessage());
+                App::error()->add($e->getMessage());
             }
         }
 
@@ -127,7 +125,7 @@ class Manage extends Process
 
             echo
             (new Form('yash-form'))
-                ->action(dcCore::app()->admin->getPageURL() . '&amp;popup=1')
+                ->action(App::backend()->getPageURL() . '&amp;popup=1')
                 ->method('get')
                 ->fields([
                     (new Para())
@@ -192,7 +190,7 @@ class Manage extends Process
         // Form
         echo
         (new Form('yash_options'))
-            ->action(dcCore::app()->admin->getPageURL())
+            ->action(App::backend()->getPageURL())
             ->method('post')
             ->fields([
                 (new Para())->items([

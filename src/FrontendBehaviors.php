@@ -14,8 +14,8 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\yash;
 
-use dcUtils;
 use Dotclear\App;
+use Dotclear\Helper\Html\Html;
 
 class FrontendBehaviors
 {
@@ -35,14 +35,14 @@ class FrontendBehaviors
             } else {
                 $theme = (string) $settings->theme;
                 if ($theme === '') {
-                    $css = App::blog()->getPF(My::id() . '/syntaxhighlighter/css/shThemeDefault.css');
+                    $css = My::cssLoad('/syntaxhighlighter/css/shThemeDefault.css');
                 } else {
-                    $css = App::blog()->getPF(My::id() . '/syntaxhighlighter/css/shTheme' . $theme . '.css');
+                    $css = My::cssLoad('/syntaxhighlighter/css/shTheme' . $theme . '.css');
                 }
             }
             echo
             My::cssLoad('/syntaxhighlighter/css/shCore.css') .
-            dcUtils::cssLoad($css);
+            $css;
         }
 
         return '';
@@ -55,7 +55,7 @@ class FrontendBehaviors
             echo
             My::jsLoad('/syntaxhighlighter/js/shCore.js') .
             My::jsLoad('/syntaxhighlighter/js/shAutoloader.js') .
-            dcUtils::jsJson('yash_config', [
+            Html::jsJson('yash_config', [
                 'path'   => App::blog()->getPF(My::id() . '/syntaxhighlighter/js/'),
                 'gutter' => $settings->hide_gutter ? false : true,
             ]) .

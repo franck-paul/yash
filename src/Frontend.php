@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\yash;
 
-use dcCore;
+use Dotclear\App;
 use Dotclear\Core\Process;
 
 class Frontend extends Process
@@ -35,7 +35,7 @@ class Frontend extends Process
             return false;
         }
 
-        dcCore::app()->addBehaviors([
+        App::behavior()->addBehaviors([
             'publicHeadContent'   => FrontendBehaviors::publicHeadContent(...),
             'publicFooterContent' => FrontendBehaviors::publicFooterContent(...),
         ]);
