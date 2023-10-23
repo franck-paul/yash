@@ -27,8 +27,8 @@ class BackendBehaviors
         return
         Page::jsJson('dc_editor_yash', [
             'title'    => __('Highlighted Code'),
-            'icon'     => urldecode(Page::getPF(My::id() . '/icon.svg')),
-            'open_url' => urldecode(My::manageUrl(['popup' => 1])),
+            'icon'     => urldecode(My::fileURL('/icon.svg')),
+            'open_url' => urldecode(My::manageUrl(['popup' => 1], '&')),
         ]) .
         My::jsLoad('post.js');
     }
