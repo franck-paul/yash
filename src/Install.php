@@ -37,7 +37,7 @@ class Install extends Process
             $old_version = App::version()->getVersion(My::id());
             if (version_compare((string) $old_version, '3.0', '<')) {
                 // Change settings names (remove yash_ prefix in them)
-                $rename = function (string $name, BlogWorkspaceInterface $settings): void {
+                $rename = static function (string $name, BlogWorkspaceInterface $settings) : void {
                     if ($settings->settingExists('yash_' . $name, true)) {
                         $settings->rename('yash_' . $name, $name);
                     }
@@ -55,8 +55,8 @@ class Install extends Process
             $settings->put('custom_css', '', App::blogWorkspace()::NS_STRING, '', false, true);
             $settings->put('hide_gutter', false, App::blogWorkspace()::NS_BOOL, '', false, true);
             $settings->put('syntaxehl', false, App::blogWorkspace()::NS_BOOL, '', false, true);
-        } catch (Exception $e) {
-            App::error()->add($e->getMessage());
+        } catch (Exception $exception) {
+            App::error()->add($exception->getMessage());
         }
 
         return true;

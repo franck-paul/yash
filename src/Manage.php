@@ -52,11 +52,11 @@ class Manage extends Process
 
         if (!empty($_POST['saveconfig'])) {
             try {
-                $active      = (empty($_POST['active'])) ? false : true;
+                $active      = !empty($_POST['active']);
                 $theme       = (empty($_POST['theme'])) ? 'Default' : $_POST['theme'];
                 $custom_css  = (empty($_POST['custom_css'])) ? '' : Html::sanitizeURL($_POST['custom_css']);
-                $hide_gutter = (empty($_POST['hide_gutter'])) ? false : true;
-                $syntaxehl   = (empty($_POST['syntaxehl'])) ? false : true;
+                $hide_gutter = !empty($_POST['hide_gutter']);
+                $syntaxehl   = !empty($_POST['syntaxehl']);
 
                 $settings = My::settings();
                 $settings->put('active', $active, App::blogWorkspace()::NS_BOOL);

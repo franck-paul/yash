@@ -40,6 +40,7 @@ class FrontendBehaviors
                     $css = My::cssLoad('/syntaxhighlighter/css/shTheme' . $theme . '.css');
                 }
             }
+
             echo
             My::cssLoad('/syntaxhighlighter/css/shCore.css') .
             $css;
@@ -57,7 +58,7 @@ class FrontendBehaviors
             My::jsLoad('/syntaxhighlighter/js/shAutoloader.js') .
             Html::jsJson('yash_config', [
                 'path'   => App::blog()->getPF(My::id() . '/syntaxhighlighter/js/'),
-                'gutter' => $settings->hide_gutter ? false : true,
+                'gutter' => !(bool) $settings->hide_gutter,
             ]) .
             My::jsLoad('public.js');
         }

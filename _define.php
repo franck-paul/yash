@@ -15,7 +15,7 @@ $this->registerModule(
     'YASH',
     'Yet Another Syntax Highlighter',
     'Pep and contributors',
-    '5.1',
+    '5.2',
     [
         'requires'    => [['core', '2.28']],
         'permissions' => 'My',
