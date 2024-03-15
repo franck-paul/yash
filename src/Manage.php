@@ -18,6 +18,7 @@ use Dotclear\App;
 use Dotclear\Core\Backend\Notices;
 use Dotclear\Core\Backend\Page;
 use Dotclear\Core\Process;
+use Dotclear\Helper\Html\Form\Button;
 use Dotclear\Helper\Html\Form\Checkbox;
 use Dotclear\Helper\Html\Form\Fieldset;
 use Dotclear\Helper\Html\Form\Form;
@@ -138,11 +139,11 @@ class Manage extends Process
                     (new Para())
                     ->separator(' ')
                     ->items([
-                        (new Submit('yash-cancel'))
+                        (new Button('yash-cancel'))
                             ->value(__('Cancel')),
                         (new Submit('yash-ok'))
                             ->value(__('Ok')),
-                        ... My::hiddenFields(),
+                        ...My::hiddenFields(),
                     ]),
                 ])
             ->render();
@@ -215,7 +216,7 @@ class Manage extends Process
                             ->label((new Label(__('Use custom CSS:'), Label::INSIDE_TEXT_BEFORE))),
                     ]),
                     (new Para())->class('info')->items([
-                        (new Text(null, __('You can use a custom CSS by providing its location.') . '<br />' . __('A location beginning with a / is treated as absolute, else it is treated as relative to the blog\'s current theme URL'))),
+                        (new Text(null, __('You can use a custom CSS by providing its location.') . '<br>' . __('A location beginning with a / is treated as absolute, else it is treated as relative to the blog\'s current theme URL'))),
                     ]),
                     (new Para())->items([
                         (new Checkbox('hide_gutter', $hide_gutter))
@@ -232,13 +233,13 @@ class Manage extends Process
                             ->label((new Label(__('SyntaxeHL compatibility mode'), Label::INSIDE_TEXT_AFTER))),
                     ]),
                     (new Para())->class('info')->items([
-                        (new Text(null, __('Will be applied on future edition of posts containing SyntaxeHL macros (///[language]…///).') . '<br />' . __('All SyntaxeHL languages is not supported by Yash (see documentation).'))),
+                        (new Text(null, __('Will be applied on future edition of posts containing SyntaxeHL macros (///[language]…///).') . '<br>' . __('All SyntaxeHL languages is not supported by Yash (see documentation).'))),
                     ]),
                 ]),
                 (new Para())->items([
                     (new Submit(['saveconfig'], __('Save configuration')))
                         ->accesskey('s'),
-                    ... My::hiddenFields(),
+                    ...My::hiddenFields(),
                 ]),
             ])
         ->render();
