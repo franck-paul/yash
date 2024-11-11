@@ -1,7 +1,7 @@
 /*global $, jQuery, jsToolBar, dotclear */
 'use strict';
 
-$(() => {
+dotclear.ready(() => {
   const data = dotclear.getData('dc_editor_yash');
 
   jsToolBar.prototype.elements.yashSpace = {
