@@ -1,7 +1,7 @@
 /*global $ */
 'use strict';
 
-$(() => {
+dotclear.ready(() => {
   $('#yash-cancel').on('click', () => {
     window.close();
     return false;
