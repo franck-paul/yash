@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @brief yash, a plugin for Dotclear 2
  *
@@ -20,7 +21,7 @@ class BackendBehaviors
 {
     public static function adminPostEditor(string $editor = ''): string
     {
-        if ($editor != 'dcLegacyEditor') {
+        if ($editor !== 'dcLegacyEditor') {
             return '';
         }
 
