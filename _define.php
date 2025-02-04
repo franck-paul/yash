@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @brief YASH, a plugin for Dotclear 2
  *
@@ -17,6 +18,7 @@ $this->registerModule(
     'Pep and contributors',
     '5.3.1',
     [
+        'date'        => '2003-08-13T13:42:00+0100',
         'requires'    => [['core', '2.28']],
         'permissions' => 'My',
         'priority'    => 1001, // Must be higher than dcLegacyEditor/dcCKEditor priority (ie 1000)
