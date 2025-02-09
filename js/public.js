@@ -3,8 +3,7 @@
 
 dotclear.yash_config = dotclear.getData('yash_config');
 
-function shGetPath() {
-  const args = arguments;
+function shGetPath(...args) {
   const result = [];
   for (const element of args) result.push(element.replace('@', dotclear.yash_config.path));
   return result;
@@ -37,8 +36,8 @@ SyntaxHighlighter.autoloader.apply(
     'sql                    @shBrushSql.js',
     'vb vbnet               @shBrushVb.js',
     'xml xhtml xslt html    @shBrushXml.js',
-    'yaml yaml              @shBrushYaml.js'
-  )
+    'yaml yaml              @shBrushYaml.js',
+  ),
 );
 SyntaxHighlighter.defaults.toolbar = false;
 SyntaxHighlighter.defaults.gutter = dotclear.yash_config.gutter;

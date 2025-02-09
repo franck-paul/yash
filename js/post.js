@@ -1,4 +1,4 @@
-/*global $, jQuery, jsToolBar, dotclear */
+/*global jsToolBar, dotclear */
 'use strict';
 
 dotclear.ready(() => {

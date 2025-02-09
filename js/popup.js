@@ -1,15 +1,17 @@
-/*global $ */
+/*global dotclear */
 'use strict';
 
 dotclear.ready(() => {
-  $('#yash-cancel').on('click', () => {
-    window.close();
+  document.getElementById('yash-cancel')?.addEventListener('click', (event) => {
+    event.preventDefault();
+    windows.close();
     return false;
   });
 
-  $('#yash-ok').on('click', () => {
-    const insert_form = $('#yash-form').get(0);
-    if (insert_form == undefined) {
+  document.getElementById('yash-ok')?.addEventListener('click', (event) => {
+    event.preventDefault();
+    const insert_form = document.getElementById('yash-form');
+    if (insert_form === undefined) {
       return;
     }
     const tb = window.opener.the_toolbar;
