@@ -15,6 +15,7 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\yash;
 
+use Dotclear\Helper\Html\Form\Note;
 use Dotclear\Helper\Html\WikiToHtml;
 
 class CoreBehaviors
@@ -227,7 +228,10 @@ class CoreBehaviors
         $real_args = explode(' ', $args);
         $class     = empty($real_args[1]) ? 'plain' : $real_args[1];
 
-        return '<pre class="brush: ' . $class . '">' . htmlspecialchars($text) . '</pre>';
+        return (new Note(null, 'pre'))
+            ->class('brush: ' . $class)
+            ->text(htmlspecialchars($text))
+        ->render();
     }
 
     /**
@@ -244,6 +248,9 @@ class CoreBehaviors
         ? self::$syntaxehl_brushes[$real_args]
         : 'plain';
 
-        return '<pre class="brush: ' . $class . '">' . htmlspecialchars($text) . '</pre>';
+        return (new Note(null, 'pre'))
+            ->class('brush: ' . $class)
+            ->text(htmlspecialchars($text))
+        ->render();
     }
 }
