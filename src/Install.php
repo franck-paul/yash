@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @brief yash, a plugin for Dotclear 2
  *
@@ -15,12 +16,14 @@ declare(strict_types=1);
 namespace Dotclear\Plugin\yash;
 
 use Dotclear\App;
-use Dotclear\Core\Process;
+use Dotclear\Helper\Process\TraitProcess;
 use Dotclear\Interface\Core\BlogWorkspaceInterface;
 use Exception;
 
-class Install extends Process
+class Install
 {
+    use TraitProcess;
+
     public static function init(): bool
     {
         return self::status(My::checkContext(My::INSTALL));
@@ -37,7 +40,7 @@ class Install extends Process
             $old_version = App::version()->getVersion(My::id());
             if (version_compare((string) $old_version, '3.0', '<')) {
                 // Change settings names (remove yash_ prefix in them)
-                $rename = static function (string $name, BlogWorkspaceInterface $settings) : void {
+                $rename = static function (string $name, BlogWorkspaceInterface $settings): void {
                     if ($settings->settingExists('yash_' . $name, true)) {
                         $settings->rename('yash_' . $name, $name);
                     }
