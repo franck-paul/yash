@@ -16,9 +16,9 @@ $this->registerModule(
     'YASH',
     'Yet Another Syntax Highlighter',
     'Pep and contributors',
-    '6.0',
+    '7.0',
     [
-        'date'        => '2025-05-19T18:06:10+0200',
+        'date'        => '2025-09-07T15:39:39+0200',
         'requires'    => [['core', '2.36']],
         'permissions' => 'My',
         'priority'    => 1010,  // Must be higher than dcLegacyEditor/dcCKEditor priority (ie 1000)
