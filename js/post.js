@@ -5,6 +5,7 @@ dotclear.ready(() => {
   const data = dotclear.getData('dc_editor_yash');
 
   jsToolBar.prototype.elements.yash = {
+    group: 'block',
     type: 'button',
     title: data.title || 'Highlighted Code',
     context: 'post',
