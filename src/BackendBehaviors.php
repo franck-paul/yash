@@ -15,7 +15,7 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\yash;
 
-use Dotclear\Core\Backend\Page;
+use Dotclear\App;
 
 class BackendBehaviors
 {
@@ -26,7 +26,7 @@ class BackendBehaviors
         }
 
         return
-        Page::jsJson('dc_editor_yash', [
+        App::backend()->page()->jsJson('dc_editor_yash', [
             'title'    => __('Highlighted Code'),
             'icon'     => urldecode(My::fileURL('/icon.svg')),
             'open_url' => urldecode(My::manageUrl(['popup' => 1], '&')),
