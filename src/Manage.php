@@ -127,6 +127,13 @@ class Manage
 
             App::backend()->page()->openModule(My::name() . ' - ' . __('Syntax Selector'), $head);
 
+            echo App::backend()->page()->breadcrumb(
+                [
+                    Html::escapeHTML(App::blog()->name()) => '',
+                    __('YASH')                            => '',
+                ]
+            );
+
             echo
             (new Form('yash-form'))
                 ->action(App::backend()->getPageURL() . '&amp;popup=1')
