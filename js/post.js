@@ -10,6 +10,7 @@ dotclear.ready(() => {
     title: data.title || 'Highlighted Code',
     context: 'post',
     icon: data.icon,
+    key: 'y',
     shortkey: 'KeyY',
     shortkey_name: 'Y',
     fn: {},
