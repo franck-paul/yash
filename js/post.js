@@ -11,7 +11,6 @@ dotclear.ready(() => {
     context: 'post',
     icon: data.icon,
     key: 'y',
-    shortkey: 'KeyY',
     shortkey_name: 'Y',
     fn: {},
     fncall: {},

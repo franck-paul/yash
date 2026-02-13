@@ -3,7 +3,6 @@ Yash plugin for Dotclear 2
 [![Release](https://img.shields.io/github/v/release/franck-paul/yash)](https://github.com/franck-paul/yash/releases)
 [![Date](https://img.shields.io/github/release-date/franck-paul/yash)](https://github.com/franck-paul/yash/releases)
 [![Issues](https://img.shields.io/github/issues/franck-paul/yash)](https://github.com/franck-paul/yash/issues)
-[![Dotaddict](https://img.shields.io/badge/dotaddict-official-green.svg)](https://plugins.dotaddict.org/dc2/details/yash)
 [![License](https://img.shields.io/github/license/franck-paul/yash)](https://github.com/franck-paul/yash/blob/master/LICENSE)
 
 ==========================
