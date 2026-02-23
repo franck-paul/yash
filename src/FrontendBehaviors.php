@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @brief yash, a plugin for Dotclear 2
  *
@@ -23,22 +24,24 @@ class FrontendBehaviors
     {
         $settings = My::settings();
         if ($settings->active) {
-            $custom_css = $settings->custom_css;
-            if (!empty($custom_css)) {
-                if (str_starts_with((string) $custom_css, '/')) {
+            $css = '';
+
+            $custom_css = is_string($custom_css = $settings->custom_css) ? $custom_css : '';
+            if ($custom_css !== '') {
+                if (str_starts_with($custom_css, '/')) {
                     $css = $custom_css;
                 } else {
-                    $css = App::blog()->settings()->system->themes_url . '/' .
-                    App::blog()->settings()->system->theme . '/' .
-                        $custom_css;
+                    $theme_url = is_string($theme_url = App::blog()->settings()->system->themes_url) ? $theme_url : '';
+                    $theme     = is_string($theme = App::blog()->settings()->system->theme) ? $theme : '';
+                    if ($theme_url !== '' && $theme !== '') {
+                        $css = $theme_url . '/' . $theme . '/' . $custom_css;
+                    }
                 }
             } else {
-                $theme = (string) $settings->theme;
-                if ($theme === '') {
-                    $css = My::cssLoad('/syntaxhighlighter/css/shThemeDefault.css');
-                } else {
-                    $css = My::cssLoad('/syntaxhighlighter/css/shTheme' . $theme . '.css');
-                }
+                $theme = is_string($theme = $settings->theme) ? $theme : '';
+                $css   = $theme === '' ?
+                    My::cssLoad('/syntaxhighlighter/css/shThemeDefault.css') :
+                    My::cssLoad('/syntaxhighlighter/css/shTheme' . $theme . '.css');
             }
 
             echo

@@ -57,8 +57,8 @@ class Manage
         if (!empty($_POST['saveconfig'])) {
             try {
                 $active      = !empty($_POST['active']);
-                $theme       = (empty($_POST['theme'])) ? 'Default' : $_POST['theme'];
-                $custom_css  = (empty($_POST['custom_css'])) ? '' : Html::sanitizeURL($_POST['custom_css']);
+                $theme       = is_string($theme = $_POST['theme']) ? $theme : 'Default';
+                $custom_css  = is_string($custom_css = $_POST['custom_css']) ? Html::sanitizeURL($custom_css) : '';
                 $hide_gutter = !empty($_POST['hide_gutter']);
                 $syntaxehl   = !empty($_POST['syntaxehl']);
 
@@ -168,8 +168,8 @@ class Manage
         $settings = My::settings();
 
         $active      = (bool) $settings->active;
-        $theme       = (string) $settings->theme;
-        $custom_css  = (string) $settings->custom_css;
+        $theme       = is_string($theme = $settings->theme) ? $theme : '';
+        $custom_css  = is_string($custom_css = $settings->custom_css) ? $custom_css : '';
         $hide_gutter = (bool) $settings->hide_gutter;
         $syntaxehl   = (bool) $settings->syntaxehl;
 
