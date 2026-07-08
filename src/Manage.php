@@ -167,11 +167,11 @@ class Manage
 
         $settings = My::settings();
 
-        $active      = (bool) $settings->active;
-        $theme       = is_string($theme = $settings->theme) ? $theme : '';
-        $custom_css  = is_string($custom_css = $settings->custom_css) ? $custom_css : '';
-        $hide_gutter = (bool) $settings->hide_gutter;
-        $syntaxehl   = (bool) $settings->syntaxehl;
+        $active      = $settings->getBool('active', false);
+        $theme       = $settings->getStr('theme', false);
+        $custom_css  = $settings->getStr('custom_css', false);
+        $hide_gutter = $settings->getBool('hide_gutter', false);
+        $syntaxehl   = $settings->getBool('syntaxehl', false);
 
         $combo_theme = [
             __('Default')         => 'Default',

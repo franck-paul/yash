@@ -206,7 +206,7 @@ class CoreBehaviors
     {
         $wiki->registerFunction('macro:yash', static::transform(...));
 
-        if ((bool) My::settings()->yash_syntaxehl) {
+        if (My::settings()->getBool('yash_syntaxehl')) {
             // Add syntaxehl compatibility macros
             foreach (array_keys(self::$syntaxehl_brushes) as $brush) {
                 $wiki->registerFunction('macro:[' . $brush . ']', static::transformSyntaxehl(...));

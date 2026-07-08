@@ -23,22 +23,22 @@ class FrontendBehaviors
     public static function publicHeadContent(): string
     {
         $settings = My::settings();
-        if ($settings->active) {
+        if ($settings->getBool('active')) {
             $css = '';
 
-            $custom_css = is_string($custom_css = $settings->custom_css) ? $custom_css : '';
+            $custom_css = $settings->getStr('custom_css', false);
             if ($custom_css !== '') {
                 if (str_starts_with($custom_css, '/')) {
                     $css = $custom_css;
                 } else {
-                    $theme_url = is_string($theme_url = App::blog()->settings()->system->themes_url) ? $theme_url : '';
-                    $theme     = is_string($theme = App::blog()->settings()->system->theme) ? $theme : '';
+                    $theme_url = App::blog()->settings()->get('system')->getStr('themes_url', false);
+                    $theme     = App::blog()->settings()->get('system')->getStr('theme', false);
                     if ($theme_url !== '' && $theme !== '') {
                         $css = $theme_url . '/' . $theme . '/' . $custom_css;
                     }
                 }
             } else {
-                $theme = is_string($theme = $settings->theme) ? $theme : '';
+                $theme = $settings->getStr('theme', false);
                 $css   = $theme === '' ?
                     My::cssLoad('/syntaxhighlighter/css/shThemeDefault.css') :
                     My::cssLoad('/syntaxhighlighter/css/shTheme' . $theme . '.css');
@@ -55,13 +55,13 @@ class FrontendBehaviors
     public static function publicFooterContent(): string
     {
         $settings = My::settings();
-        if ($settings->active) {
+        if ($settings->getBool('active')) {
             echo
             My::jsLoad('/syntaxhighlighter/js/shCore.js') .
             My::jsLoad('/syntaxhighlighter/js/shAutoloader.js') .
             Html::jsJson('yash_config', [
                 'path'   => App::blog()->getPF(My::id() . '/syntaxhighlighter/js/'),
-                'gutter' => !(bool) $settings->hide_gutter,
+                'gutter' => !$settings->getBool('hide_gutter', false),
             ]) .
             My::jsLoad('public.js');
         }
