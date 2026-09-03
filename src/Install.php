@@ -40,9 +40,9 @@ class Install
             $old_version = App::version()->getVersion(My::id());
             if (version_compare((string) $old_version, '3.0', '<')) {
                 // Change settings names (remove yash_ prefix in them)
-                $rename = static function (string $name, BlogWorkspaceInterface $settings): void {
-                    if ($settings->settingExists('yash_' . $name, true)) {
-                        $settings->rename('yash_' . $name, $name);
+                $rename = static function (string $name, BlogWorkspaceInterface $blogWorkspace): void {
+                    if ($blogWorkspace->settingExists('yash_' . $name, true)) {
+                        $blogWorkspace->rename('yash_' . $name, $name);
                     }
                 };
                 $settings = My::settings();

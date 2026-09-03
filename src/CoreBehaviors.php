@@ -202,14 +202,14 @@ class CoreBehaviors
         'z80'           => '',
     ];
 
-    public static function coreInitWikiPost(WikiToHtml $wiki): string
+    public static function coreInitWikiPost(WikiToHtml $wikiToHtml): string
     {
-        $wiki->registerFunction('macro:yash', static::transform(...));
+        $wikiToHtml->registerFunction('macro:yash', static::transform(...));
 
         if (My::settings()->getBool('yash_syntaxehl')) {
             // Add syntaxehl compatibility macros
             foreach (array_keys(self::$syntaxehl_brushes) as $brush) {
-                $wiki->registerFunction('macro:[' . $brush . ']', static::transformSyntaxehl(...));
+                $wikiToHtml->registerFunction('macro:[' . $brush . ']', static::transformSyntaxehl(...));
             }
         }
 
