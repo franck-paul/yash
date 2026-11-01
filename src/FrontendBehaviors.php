@@ -23,7 +23,7 @@ class FrontendBehaviors
     public static function publicHeadContent(): string
     {
         $settings = My::settings();
-        if ($settings->getBool('active')) {
+        if ($settings->getBool('active', false)) {
             $css = '';
 
             $custom_css = $settings->getStr('custom_css', false);
@@ -55,7 +55,7 @@ class FrontendBehaviors
     public static function publicFooterContent(): string
     {
         $settings = My::settings();
-        if ($settings->getBool('active')) {
+        if ($settings->getBool('active', false)) {
             echo
             My::jsLoad('/syntaxhighlighter/js/shCore.js') .
             My::jsLoad('/syntaxhighlighter/js/shAutoloader.js') .

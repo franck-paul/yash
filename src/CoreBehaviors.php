@@ -206,7 +206,7 @@ class CoreBehaviors
     {
         $wikiToHtml->registerFunction('macro:yash', static::transform(...));
 
-        if (My::settings()->getBool('yash_syntaxehl')) {
+        if (My::settings()->getBool('yash_syntaxehl', false)) {
             // Add syntaxehl compatibility macros
             foreach (array_keys(self::$syntaxehl_brushes) as $brush) {
                 $wikiToHtml->registerFunction('macro:[' . $brush . ']', static::transformSyntaxehl(...));
