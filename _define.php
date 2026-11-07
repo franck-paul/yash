@@ -19,9 +19,9 @@ if (isset($this) && is_object($this) && method_exists($this, 'registerModule') &
         'YASH',
         'Yet Another Syntax Highlighter',
         'Pep and contributors',
-        '9.0',
+        '9.1',
         [
-            'date'        => '2026-08-03T10:17:20+0200',
+            'date'        => '2026-11-07T17:10:43+0100',
             'requires'    => [['core', '2.39']],
             'permissions' => 'My',
             'priority'    => 1010,  // Must be higher than dcLegacyEditor/dcCKEditor priority (ie 1000)
